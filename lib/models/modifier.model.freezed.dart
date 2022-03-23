@@ -20,7 +20,7 @@ class _$ModifierTearOff {
 
   _Modifier call(
       {required modifier_value value,
-      element_type element = element_type.none,
+      elements element = elements.none,
       bool shuffle = false,
       bool rolling = false,
       conditions condition = conditions.none,
@@ -42,7 +42,7 @@ const $Modifier = _$ModifierTearOff();
 /// @nodoc
 mixin _$Modifier {
   modifier_value get value => throw _privateConstructorUsedError;
-  element_type get element => throw _privateConstructorUsedError;
+  elements get element => throw _privateConstructorUsedError;
   bool get shuffle => throw _privateConstructorUsedError;
   bool get rolling => throw _privateConstructorUsedError;
   conditions get condition => throw _privateConstructorUsedError;
@@ -59,7 +59,7 @@ abstract class $ModifierCopyWith<$Res> {
       _$ModifierCopyWithImpl<$Res>;
   $Res call(
       {modifier_value value,
-      element_type element,
+      elements element,
       bool shuffle,
       bool rolling,
       conditions condition,
@@ -91,7 +91,7 @@ class _$ModifierCopyWithImpl<$Res> implements $ModifierCopyWith<$Res> {
       element: element == freezed
           ? _value.element
           : element // ignore: cast_nullable_to_non_nullable
-              as element_type,
+              as elements,
       shuffle: shuffle == freezed
           ? _value.shuffle
           : shuffle // ignore: cast_nullable_to_non_nullable
@@ -119,7 +119,7 @@ abstract class _$ModifierCopyWith<$Res> implements $ModifierCopyWith<$Res> {
   @override
   $Res call(
       {modifier_value value,
-      element_type element,
+      elements element,
       bool shuffle,
       bool rolling,
       conditions condition,
@@ -152,7 +152,7 @@ class __$ModifierCopyWithImpl<$Res> extends _$ModifierCopyWithImpl<$Res>
       element: element == freezed
           ? _value.element
           : element // ignore: cast_nullable_to_non_nullable
-              as element_type,
+              as elements,
       shuffle: shuffle == freezed
           ? _value.shuffle
           : shuffle // ignore: cast_nullable_to_non_nullable
@@ -178,7 +178,7 @@ class __$ModifierCopyWithImpl<$Res> extends _$ModifierCopyWithImpl<$Res>
 class _$_Modifier implements _Modifier {
   _$_Modifier(
       {required this.value,
-      this.element = element_type.none,
+      this.element = elements.none,
       this.shuffle = false,
       this.rolling = false,
       this.condition = conditions.none,
@@ -188,7 +188,7 @@ class _$_Modifier implements _Modifier {
   final modifier_value value;
   @JsonKey()
   @override
-  final element_type element;
+  final elements element;
   @JsonKey()
   @override
   final bool shuffle;
@@ -239,7 +239,7 @@ class _$_Modifier implements _Modifier {
 abstract class _Modifier implements Modifier {
   factory _Modifier(
       {required modifier_value value,
-      element_type element,
+      elements element,
       bool shuffle,
       bool rolling,
       conditions condition,
@@ -248,7 +248,7 @@ abstract class _Modifier implements Modifier {
   @override
   modifier_value get value;
   @override
-  element_type get element;
+  elements get element;
   @override
   bool get shuffle;
   @override

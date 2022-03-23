@@ -12,5 +12,6 @@ class Perk with _$Perk {
     required Map<Modifier, int> modifierUpdates,
     @Default(1) int maxUses,
     @Default(0) int used,
+    @Default('') String sideEffect,
   }) = _Perk;
 }

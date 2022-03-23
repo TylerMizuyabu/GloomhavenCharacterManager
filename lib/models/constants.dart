@@ -1,6 +1,6 @@
 enum perk_action { none, add, remove, replace }
 
-enum element_type { none, fire, ice, air, earth, light, dark }
+enum elements { none, fire, ice, air, earth, light, dark }
 
 enum modifier_value {
   none,

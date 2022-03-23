@@ -19,7 +19,6 @@ class Character with _$Character {
 }
 
 Character generateQuatrylDemolitionist(String name) {
-  // TODO finish the list of perks
   return Character(name: name, perks: [
     Perk(
       action: perk_action.remove,
@@ -43,6 +42,41 @@ Character generateQuatrylDemolitionist(String name) {
         Modifier(value: modifier_value.zero): -1,
         Modifier(value: modifier_value.plusTwo, condition: conditions.muddle): 1
       },
+      maxUses: 2,
+    ),
+    Perk(
+      action: perk_action.replace,
+      modifierUpdates: {
+        Modifier(value: modifier_value.minusOne): -1,
+        Modifier(value: modifier_value.zero, condition: conditions.poison): 1,
+      },
+    ),
+    Perk(
+      action: perk_action.add,
+      modifierUpdates: {Modifier(value: modifier_value.plusTwo): 1},
+      maxUses: 2,
+    ),
+    Perk(
+      action: perk_action.replace,
+      modifierUpdates: {
+        Modifier(value: modifier_value.plusOne): -1,
+        Modifier(value: modifier_value.plusTwo, element: elements.earth): 1
+      },
+      maxUses: 2,
+    ),
+    Perk(
+      action: perk_action.replace,
+      modifierUpdates: {
+        Modifier(value: modifier_value.plusOne): -1,
+        Modifier(value: modifier_value.plusTwo, element: elements.fire): 1,
+      },
+      maxUses: 2,
+    ),
+    Perk(
+      action: perk_action.add,
+      modifierUpdates: {Modifier(value: modifier_value.zero): 1},
+      maxUses: 2,
+      sideEffect: 'All adjacent enemies suffer 1 damage',
     )
   ]);
 }

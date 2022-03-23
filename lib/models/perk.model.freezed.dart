@@ -22,12 +22,14 @@ class _$PerkTearOff {
       {required perk_action action,
       required Map<Modifier, int> modifierUpdates,
       int maxUses = 1,
-      int used = 0}) {
+      int used = 0,
+      String sideEffect = ''}) {
     return _Perk(
       action: action,
       modifierUpdates: modifierUpdates,
       maxUses: maxUses,
       used: used,
+      sideEffect: sideEffect,
     );
   }
 }
@@ -41,6 +43,7 @@ mixin _$Perk {
   Map<Modifier, int> get modifierUpdates => throw _privateConstructorUsedError;
   int get maxUses => throw _privateConstructorUsedError;
   int get used => throw _privateConstructorUsedError;
+  String get sideEffect => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PerkCopyWith<Perk> get copyWith => throw _privateConstructorUsedError;
@@ -54,7 +57,8 @@ abstract class $PerkCopyWith<$Res> {
       {perk_action action,
       Map<Modifier, int> modifierUpdates,
       int maxUses,
-      int used});
+      int used,
+      String sideEffect});
 }
 
 /// @nodoc
@@ -71,6 +75,7 @@ class _$PerkCopyWithImpl<$Res> implements $PerkCopyWith<$Res> {
     Object? modifierUpdates = freezed,
     Object? maxUses = freezed,
     Object? used = freezed,
+    Object? sideEffect = freezed,
   }) {
     return _then(_value.copyWith(
       action: action == freezed
@@ -89,6 +94,10 @@ class _$PerkCopyWithImpl<$Res> implements $PerkCopyWith<$Res> {
           ? _value.used
           : used // ignore: cast_nullable_to_non_nullable
               as int,
+      sideEffect: sideEffect == freezed
+          ? _value.sideEffect
+          : sideEffect // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -102,7 +111,8 @@ abstract class _$PerkCopyWith<$Res> implements $PerkCopyWith<$Res> {
       {perk_action action,
       Map<Modifier, int> modifierUpdates,
       int maxUses,
-      int used});
+      int used,
+      String sideEffect});
 }
 
 /// @nodoc
@@ -120,6 +130,7 @@ class __$PerkCopyWithImpl<$Res> extends _$PerkCopyWithImpl<$Res>
     Object? modifierUpdates = freezed,
     Object? maxUses = freezed,
     Object? used = freezed,
+    Object? sideEffect = freezed,
   }) {
     return _then(_Perk(
       action: action == freezed
@@ -138,6 +149,10 @@ class __$PerkCopyWithImpl<$Res> extends _$PerkCopyWithImpl<$Res>
           ? _value.used
           : used // ignore: cast_nullable_to_non_nullable
               as int,
+      sideEffect: sideEffect == freezed
+          ? _value.sideEffect
+          : sideEffect // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -149,7 +164,8 @@ class _$_Perk implements _Perk {
       {required this.action,
       required this.modifierUpdates,
       this.maxUses = 1,
-      this.used = 0});
+      this.used = 0,
+      this.sideEffect = ''});
 
   @override
   final perk_action action;
@@ -161,10 +177,13 @@ class _$_Perk implements _Perk {
   @JsonKey()
   @override
   final int used;
+  @JsonKey()
+  @override
+  final String sideEffect;
 
   @override
   String toString() {
-    return 'Perk(action: $action, modifierUpdates: $modifierUpdates, maxUses: $maxUses, used: $used)';
+    return 'Perk(action: $action, modifierUpdates: $modifierUpdates, maxUses: $maxUses, used: $used, sideEffect: $sideEffect)';
   }
 
   @override
@@ -176,7 +195,9 @@ class _$_Perk implements _Perk {
             const DeepCollectionEquality()
                 .equals(other.modifierUpdates, modifierUpdates) &&
             const DeepCollectionEquality().equals(other.maxUses, maxUses) &&
-            const DeepCollectionEquality().equals(other.used, used));
+            const DeepCollectionEquality().equals(other.used, used) &&
+            const DeepCollectionEquality()
+                .equals(other.sideEffect, sideEffect));
   }
 
   @override
@@ -185,7 +206,8 @@ class _$_Perk implements _Perk {
       const DeepCollectionEquality().hash(action),
       const DeepCollectionEquality().hash(modifierUpdates),
       const DeepCollectionEquality().hash(maxUses),
-      const DeepCollectionEquality().hash(used));
+      const DeepCollectionEquality().hash(used),
+      const DeepCollectionEquality().hash(sideEffect));
 
   @JsonKey(ignore: true)
   @override
@@ -198,7 +220,8 @@ abstract class _Perk implements Perk {
       {required perk_action action,
       required Map<Modifier, int> modifierUpdates,
       int maxUses,
-      int used}) = _$_Perk;
+      int used,
+      String sideEffect}) = _$_Perk;
 
   @override
   perk_action get action;
@@ -208,6 +231,8 @@ abstract class _Perk implements Perk {
   int get maxUses;
   @override
   int get used;
+  @override
+  String get sideEffect;
   @override
   @JsonKey(ignore: true)
   _$PerkCopyWith<_Perk> get copyWith => throw _privateConstructorUsedError;

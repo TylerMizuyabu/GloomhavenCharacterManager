@@ -3,6 +3,7 @@ import 'package:gloomhaven_character_manager/models/constants.dart';
 import 'package:gloomhaven_character_manager/models/perk.model.dart';
 
 import 'item.model.dart';
+import 'modifier.model.dart';
 
 part 'character.model.freezed.dart';
 
@@ -19,12 +20,19 @@ class Character with _$Character {
 Character generateQuatrylDemolitionist(String name) {
   // TODO finish the list of perks
   return Character(name: name, perks: [
-    Perk(action: perk_action.remove, target: 'four (+0) cards'),
-    Perk(action: perk_action.remove, target: 'two (-1) cards', maxUses: 2),
-    Perk(action: perk_action.remove, target: 'one (-2) card and one (-1) card'),
     Perk(
-      action: perk_action.replace,
-      target: 'one (+0) card',
-    )
+        action: perk_action.remove,
+        mod_1: Modifier(value: modifier_value.zero),
+        mod1Quantity: 4),
+    // Perk(
+    //     action: perk_action.remove,
+    //     mod_1: Modifier(value: modifier_value.minusOne),
+    //     mod1Quantity: 2,
+    //     maxUses: 2),
+    // Perk(action: perk_action.remove, target: 'one (-2) card and one (-1) card'),
+    // Perk(
+    //   action: perk_action.replace,
+    //   target: 'one (+0) card',
+    // )
   ]);
 }

@@ -20,18 +20,12 @@ class _$PerkTearOff {
 
   _Perk call(
       {required perk_action action,
-      required Modifier mod_1,
-      int mod1Quantity = 1,
-      Modifier? mod_2,
-      int? mod2Quantity,
+      required Map<Modifier, int> modifierUpdates,
       int maxUses = 1,
       int used = 0}) {
     return _Perk(
       action: action,
-      mod_1: mod_1,
-      mod1Quantity: mod1Quantity,
-      mod_2: mod_2,
-      mod2Quantity: mod2Quantity,
+      modifierUpdates: modifierUpdates,
       maxUses: maxUses,
       used: used,
     );
@@ -44,10 +38,7 @@ const $Perk = _$PerkTearOff();
 /// @nodoc
 mixin _$Perk {
   perk_action get action => throw _privateConstructorUsedError;
-  Modifier get mod_1 => throw _privateConstructorUsedError;
-  int get mod1Quantity => throw _privateConstructorUsedError;
-  Modifier? get mod_2 => throw _privateConstructorUsedError;
-  int? get mod2Quantity => throw _privateConstructorUsedError;
+  Map<Modifier, int> get modifierUpdates => throw _privateConstructorUsedError;
   int get maxUses => throw _privateConstructorUsedError;
   int get used => throw _privateConstructorUsedError;
 
@@ -61,15 +52,9 @@ abstract class $PerkCopyWith<$Res> {
       _$PerkCopyWithImpl<$Res>;
   $Res call(
       {perk_action action,
-      Modifier mod_1,
-      int mod1Quantity,
-      Modifier? mod_2,
-      int? mod2Quantity,
+      Map<Modifier, int> modifierUpdates,
       int maxUses,
       int used});
-
-  $ModifierCopyWith<$Res> get mod_1;
-  $ModifierCopyWith<$Res>? get mod_2;
 }
 
 /// @nodoc
@@ -83,10 +68,7 @@ class _$PerkCopyWithImpl<$Res> implements $PerkCopyWith<$Res> {
   @override
   $Res call({
     Object? action = freezed,
-    Object? mod_1 = freezed,
-    Object? mod1Quantity = freezed,
-    Object? mod_2 = freezed,
-    Object? mod2Quantity = freezed,
+    Object? modifierUpdates = freezed,
     Object? maxUses = freezed,
     Object? used = freezed,
   }) {
@@ -95,22 +77,10 @@ class _$PerkCopyWithImpl<$Res> implements $PerkCopyWith<$Res> {
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
               as perk_action,
-      mod_1: mod_1 == freezed
-          ? _value.mod_1
-          : mod_1 // ignore: cast_nullable_to_non_nullable
-              as Modifier,
-      mod1Quantity: mod1Quantity == freezed
-          ? _value.mod1Quantity
-          : mod1Quantity // ignore: cast_nullable_to_non_nullable
-              as int,
-      mod_2: mod_2 == freezed
-          ? _value.mod_2
-          : mod_2 // ignore: cast_nullable_to_non_nullable
-              as Modifier?,
-      mod2Quantity: mod2Quantity == freezed
-          ? _value.mod2Quantity
-          : mod2Quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
+      modifierUpdates: modifierUpdates == freezed
+          ? _value.modifierUpdates
+          : modifierUpdates // ignore: cast_nullable_to_non_nullable
+              as Map<Modifier, int>,
       maxUses: maxUses == freezed
           ? _value.maxUses
           : maxUses // ignore: cast_nullable_to_non_nullable
@@ -121,24 +91,6 @@ class _$PerkCopyWithImpl<$Res> implements $PerkCopyWith<$Res> {
               as int,
     ));
   }
-
-  @override
-  $ModifierCopyWith<$Res> get mod_1 {
-    return $ModifierCopyWith<$Res>(_value.mod_1, (value) {
-      return _then(_value.copyWith(mod_1: value));
-    });
-  }
-
-  @override
-  $ModifierCopyWith<$Res>? get mod_2 {
-    if (_value.mod_2 == null) {
-      return null;
-    }
-
-    return $ModifierCopyWith<$Res>(_value.mod_2!, (value) {
-      return _then(_value.copyWith(mod_2: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -148,17 +100,9 @@ abstract class _$PerkCopyWith<$Res> implements $PerkCopyWith<$Res> {
   @override
   $Res call(
       {perk_action action,
-      Modifier mod_1,
-      int mod1Quantity,
-      Modifier? mod_2,
-      int? mod2Quantity,
+      Map<Modifier, int> modifierUpdates,
       int maxUses,
       int used});
-
-  @override
-  $ModifierCopyWith<$Res> get mod_1;
-  @override
-  $ModifierCopyWith<$Res>? get mod_2;
 }
 
 /// @nodoc
@@ -173,10 +117,7 @@ class __$PerkCopyWithImpl<$Res> extends _$PerkCopyWithImpl<$Res>
   @override
   $Res call({
     Object? action = freezed,
-    Object? mod_1 = freezed,
-    Object? mod1Quantity = freezed,
-    Object? mod_2 = freezed,
-    Object? mod2Quantity = freezed,
+    Object? modifierUpdates = freezed,
     Object? maxUses = freezed,
     Object? used = freezed,
   }) {
@@ -185,22 +126,10 @@ class __$PerkCopyWithImpl<$Res> extends _$PerkCopyWithImpl<$Res>
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
               as perk_action,
-      mod_1: mod_1 == freezed
-          ? _value.mod_1
-          : mod_1 // ignore: cast_nullable_to_non_nullable
-              as Modifier,
-      mod1Quantity: mod1Quantity == freezed
-          ? _value.mod1Quantity
-          : mod1Quantity // ignore: cast_nullable_to_non_nullable
-              as int,
-      mod_2: mod_2 == freezed
-          ? _value.mod_2
-          : mod_2 // ignore: cast_nullable_to_non_nullable
-              as Modifier?,
-      mod2Quantity: mod2Quantity == freezed
-          ? _value.mod2Quantity
-          : mod2Quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
+      modifierUpdates: modifierUpdates == freezed
+          ? _value.modifierUpdates
+          : modifierUpdates // ignore: cast_nullable_to_non_nullable
+              as Map<Modifier, int>,
       maxUses: maxUses == freezed
           ? _value.maxUses
           : maxUses // ignore: cast_nullable_to_non_nullable
@@ -218,24 +147,14 @@ class __$PerkCopyWithImpl<$Res> extends _$PerkCopyWithImpl<$Res>
 class _$_Perk implements _Perk {
   _$_Perk(
       {required this.action,
-      required this.mod_1,
-      this.mod1Quantity = 1,
-      this.mod_2,
-      this.mod2Quantity,
+      required this.modifierUpdates,
       this.maxUses = 1,
       this.used = 0});
 
   @override
   final perk_action action;
   @override
-  final Modifier mod_1;
-  @JsonKey()
-  @override
-  final int mod1Quantity;
-  @override
-  final Modifier? mod_2;
-  @override
-  final int? mod2Quantity;
+  final Map<Modifier, int> modifierUpdates;
   @JsonKey()
   @override
   final int maxUses;
@@ -245,7 +164,7 @@ class _$_Perk implements _Perk {
 
   @override
   String toString() {
-    return 'Perk(action: $action, mod_1: $mod_1, mod1Quantity: $mod1Quantity, mod_2: $mod_2, mod2Quantity: $mod2Quantity, maxUses: $maxUses, used: $used)';
+    return 'Perk(action: $action, modifierUpdates: $modifierUpdates, maxUses: $maxUses, used: $used)';
   }
 
   @override
@@ -254,12 +173,8 @@ class _$_Perk implements _Perk {
         (other.runtimeType == runtimeType &&
             other is _Perk &&
             const DeepCollectionEquality().equals(other.action, action) &&
-            const DeepCollectionEquality().equals(other.mod_1, mod_1) &&
             const DeepCollectionEquality()
-                .equals(other.mod1Quantity, mod1Quantity) &&
-            const DeepCollectionEquality().equals(other.mod_2, mod_2) &&
-            const DeepCollectionEquality()
-                .equals(other.mod2Quantity, mod2Quantity) &&
+                .equals(other.modifierUpdates, modifierUpdates) &&
             const DeepCollectionEquality().equals(other.maxUses, maxUses) &&
             const DeepCollectionEquality().equals(other.used, used));
   }
@@ -268,10 +183,7 @@ class _$_Perk implements _Perk {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(action),
-      const DeepCollectionEquality().hash(mod_1),
-      const DeepCollectionEquality().hash(mod1Quantity),
-      const DeepCollectionEquality().hash(mod_2),
-      const DeepCollectionEquality().hash(mod2Quantity),
+      const DeepCollectionEquality().hash(modifierUpdates),
       const DeepCollectionEquality().hash(maxUses),
       const DeepCollectionEquality().hash(used));
 
@@ -284,23 +196,14 @@ class _$_Perk implements _Perk {
 abstract class _Perk implements Perk {
   factory _Perk(
       {required perk_action action,
-      required Modifier mod_1,
-      int mod1Quantity,
-      Modifier? mod_2,
-      int? mod2Quantity,
+      required Map<Modifier, int> modifierUpdates,
       int maxUses,
       int used}) = _$_Perk;
 
   @override
   perk_action get action;
   @override
-  Modifier get mod_1;
-  @override
-  int get mod1Quantity;
-  @override
-  Modifier? get mod_2;
-  @override
-  int? get mod2Quantity;
+  Map<Modifier, int> get modifierUpdates;
   @override
   int get maxUses;
   @override

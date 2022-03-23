@@ -10,11 +10,14 @@ part 'modifier.model.freezed.dart';
 class Modifier with _$Modifier {
   factory Modifier({
     required modifier_value value,
-    @Default(elements.none) elements element,
+    @Default([]) List<element_types> elements,
     @Default(false) bool shuffle,
     @Default(false) bool rolling,
-    @Default(conditions.none) conditions condition,
-    @Default(effects.none) effects effect,
+    @Default(condition_types.none) condition_types condition,
+    @Default(effect_types.none) effect_types effect,
+    @Default(1) int effectTargets,
+    @Default(bonus_types.none) bonus_types bonus,
+    @Default(1) int bonusSize,
   }) = _Modifier;
 }
 

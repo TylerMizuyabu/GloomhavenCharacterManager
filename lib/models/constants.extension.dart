@@ -13,6 +13,8 @@ extension ModifierString on modifier_value {
         return "(+1)";
       case modifier_value.plusTwo:
         return "(+2)";
+      case modifier_value.plusThree:
+        return "(+3)";
       case modifier_value.doubled:
         return "(x2)";
       case modifier_value.none:
@@ -23,36 +25,36 @@ extension ModifierString on modifier_value {
   }
 }
 
-extension ConditionString on conditions {
+extension ConditionString on condition_types {
   String getString() {
     switch (this) {
-      case conditions.bane:
+      case condition_types.bane:
         return "BANE";
-      case conditions.bless:
+      case condition_types.bless:
         return "BLESS";
-      case conditions.brittle:
+      case condition_types.brittle:
         return "BRITTLE";
-      case conditions.disarm:
+      case condition_types.disarm:
         return "DISARM";
-      case conditions.curse:
+      case condition_types.curse:
         return "CURSE";
-      case conditions.immobilize:
+      case condition_types.immobilize:
         return "IMMOBILIZE";
-      case conditions.injure:
+      case condition_types.injure:
         return "INJURE";
-      case conditions.invisible:
+      case condition_types.invisible:
         return "INVISIBLE";
-      case conditions.muddle:
+      case condition_types.muddle:
         return "MUDDLE";
-      case conditions.poison:
+      case condition_types.poison:
         return "POISON";
-      case conditions.regenerate:
+      case condition_types.regenerate:
         return "REGENERATE";
-      case conditions.strengthen:
+      case condition_types.strengthen:
         return "STRENGTHEN";
-      case conditions.stun:
+      case condition_types.stun:
         return "STUN";
-      case conditions.wound:
+      case condition_types.wound:
         return "WOUND";
       default:
         return "";

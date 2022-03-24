@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:gloomhaven_character_manager/models/constants.dart';
-import 'package:gloomhaven_character_manager/models/constants.extension.dart';
 
 part 'modifier.model.freezed.dart';
+part 'modifier.model.g.dart';
 
 @freezed
 class Modifier with _$Modifier {
@@ -19,6 +19,9 @@ class Modifier with _$Modifier {
     @Default(bonus_types.none) bonus_types bonus,
     @Default(1) int bonusSize,
   }) = _Modifier;
+
+  factory Modifier.fromJson(Map<String, dynamic> json) =>
+      _$ModifierFromJson(json);
 }
 
 List<Modifier> generateBaseModifierDeck() {

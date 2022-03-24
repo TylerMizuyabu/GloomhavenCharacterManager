@@ -14,13 +14,17 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Perk _$PerkFromJson(Map<String, dynamic> json) {
+  return _Perk.fromJson(json);
+}
+
 /// @nodoc
 class _$PerkTearOff {
   const _$PerkTearOff();
 
   _Perk call(
       {required perk_action action,
-      required Map<Modifier, int> modifierUpdates,
+      required List<ModifierUpdate> modifierUpdates,
       int maxUses = 1,
       int used = 0,
       String sideEffect = ''}) {
@@ -32,6 +36,10 @@ class _$PerkTearOff {
       sideEffect: sideEffect,
     );
   }
+
+  Perk fromJson(Map<String, Object?> json) {
+    return Perk.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -40,11 +48,13 @@ const $Perk = _$PerkTearOff();
 /// @nodoc
 mixin _$Perk {
   perk_action get action => throw _privateConstructorUsedError;
-  Map<Modifier, int> get modifierUpdates => throw _privateConstructorUsedError;
+  List<ModifierUpdate> get modifierUpdates =>
+      throw _privateConstructorUsedError;
   int get maxUses => throw _privateConstructorUsedError;
   int get used => throw _privateConstructorUsedError;
   String get sideEffect => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $PerkCopyWith<Perk> get copyWith => throw _privateConstructorUsedError;
 }
@@ -55,7 +65,7 @@ abstract class $PerkCopyWith<$Res> {
       _$PerkCopyWithImpl<$Res>;
   $Res call(
       {perk_action action,
-      Map<Modifier, int> modifierUpdates,
+      List<ModifierUpdate> modifierUpdates,
       int maxUses,
       int used,
       String sideEffect});
@@ -85,7 +95,7 @@ class _$PerkCopyWithImpl<$Res> implements $PerkCopyWith<$Res> {
       modifierUpdates: modifierUpdates == freezed
           ? _value.modifierUpdates
           : modifierUpdates // ignore: cast_nullable_to_non_nullable
-              as Map<Modifier, int>,
+              as List<ModifierUpdate>,
       maxUses: maxUses == freezed
           ? _value.maxUses
           : maxUses // ignore: cast_nullable_to_non_nullable
@@ -109,7 +119,7 @@ abstract class _$PerkCopyWith<$Res> implements $PerkCopyWith<$Res> {
   @override
   $Res call(
       {perk_action action,
-      Map<Modifier, int> modifierUpdates,
+      List<ModifierUpdate> modifierUpdates,
       int maxUses,
       int used,
       String sideEffect});
@@ -140,7 +150,7 @@ class __$PerkCopyWithImpl<$Res> extends _$PerkCopyWithImpl<$Res>
       modifierUpdates: modifierUpdates == freezed
           ? _value.modifierUpdates
           : modifierUpdates // ignore: cast_nullable_to_non_nullable
-              as Map<Modifier, int>,
+              as List<ModifierUpdate>,
       maxUses: maxUses == freezed
           ? _value.maxUses
           : maxUses // ignore: cast_nullable_to_non_nullable
@@ -158,7 +168,7 @@ class __$PerkCopyWithImpl<$Res> extends _$PerkCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Perk implements _Perk {
   _$_Perk(
       {required this.action,
@@ -167,10 +177,12 @@ class _$_Perk implements _Perk {
       this.used = 0,
       this.sideEffect = ''});
 
+  factory _$_Perk.fromJson(Map<String, dynamic> json) => _$$_PerkFromJson(json);
+
   @override
   final perk_action action;
   @override
-  final Map<Modifier, int> modifierUpdates;
+  final List<ModifierUpdate> modifierUpdates;
   @JsonKey()
   @override
   final int maxUses;
@@ -213,20 +225,27 @@ class _$_Perk implements _Perk {
   @override
   _$PerkCopyWith<_Perk> get copyWith =>
       __$PerkCopyWithImpl<_Perk>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_PerkToJson(this);
+  }
 }
 
 abstract class _Perk implements Perk {
   factory _Perk(
       {required perk_action action,
-      required Map<Modifier, int> modifierUpdates,
+      required List<ModifierUpdate> modifierUpdates,
       int maxUses,
       int used,
       String sideEffect}) = _$_Perk;
 
+  factory _Perk.fromJson(Map<String, dynamic> json) = _$_Perk.fromJson;
+
   @override
   perk_action get action;
   @override
-  Map<Modifier, int> get modifierUpdates;
+  List<ModifierUpdate> get modifierUpdates;
   @override
   int get maxUses;
   @override

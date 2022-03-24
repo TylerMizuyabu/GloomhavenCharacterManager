@@ -13,9 +13,9 @@ class CharacterList extends StatelessWidget {
     return FirestoreListView<Map<String, dynamic>>(
       query: charactersQuery,
       itemBuilder: (context, snapshot) {
-        Map<String, dynamic> user = snapshot.data();
+        Map<String, dynamic> character = snapshot.data();
 
-        return Text('User name is ${user['name']}');
+        return Text('Character: ${character['name']}');
       },
     );
   }

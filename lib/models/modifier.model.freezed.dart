@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Modifier _$ModifierFromJson(Map<String, dynamic> json) {
+  return _Modifier.fromJson(json);
+}
+
 /// @nodoc
 class _$ModifierTearOff {
   const _$ModifierTearOff();
@@ -40,6 +44,10 @@ class _$ModifierTearOff {
       bonusSize: bonusSize,
     );
   }
+
+  Modifier fromJson(Map<String, Object?> json) {
+    return Modifier.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -57,6 +65,7 @@ mixin _$Modifier {
   bonus_types get bonus => throw _privateConstructorUsedError;
   int get bonusSize => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ModifierCopyWith<Modifier> get copyWith =>
       throw _privateConstructorUsedError;
@@ -219,7 +228,7 @@ class __$ModifierCopyWithImpl<$Res> extends _$ModifierCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Modifier implements _Modifier {
   _$_Modifier(
       {required this.value,
@@ -231,6 +240,9 @@ class _$_Modifier implements _Modifier {
       this.effectTargets = 1,
       this.bonus = bonus_types.none,
       this.bonusSize = 1});
+
+  factory _$_Modifier.fromJson(Map<String, dynamic> json) =>
+      _$$_ModifierFromJson(json);
 
   @override
   final modifier_value value;
@@ -298,6 +310,11 @@ class _$_Modifier implements _Modifier {
   @override
   _$ModifierCopyWith<_Modifier> get copyWith =>
       __$ModifierCopyWithImpl<_Modifier>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ModifierToJson(this);
+  }
 }
 
 abstract class _Modifier implements Modifier {
@@ -311,6 +328,8 @@ abstract class _Modifier implements Modifier {
       int effectTargets,
       bonus_types bonus,
       int bonusSize}) = _$_Modifier;
+
+  factory _Modifier.fromJson(Map<String, dynamic> json) = _$_Modifier.fromJson;
 
   @override
   modifier_value get value;

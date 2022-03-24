@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Character _$CharacterFromJson(Map<String, dynamic> json) {
+  return _Character.fromJson(json);
+}
+
 /// @nodoc
 class _$CharacterTearOff {
   const _$CharacterTearOff();
@@ -36,6 +40,10 @@ class _$CharacterTearOff {
       conditions: conditions,
     );
   }
+
+  Character fromJson(Map<String, Object?> json) {
+    return Character.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -51,6 +59,7 @@ mixin _$Character {
   List<Perk> get perks => throw _privateConstructorUsedError;
   List<condition_types> get conditions => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CharacterCopyWith<Character> get copyWith =>
       throw _privateConstructorUsedError;
@@ -190,7 +199,7 @@ class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Character implements _Character {
   _$_Character(
       {required this.name,
@@ -200,6 +209,9 @@ class _$_Character implements _Character {
       this.items = const [],
       this.perks = const [],
       this.conditions = const []});
+
+  factory _$_Character.fromJson(Map<String, dynamic> json) =>
+      _$$_CharacterFromJson(json);
 
   @override
   final String name;
@@ -256,6 +268,11 @@ class _$_Character implements _Character {
   @override
   _$CharacterCopyWith<_Character> get copyWith =>
       __$CharacterCopyWithImpl<_Character>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CharacterToJson(this);
+  }
 }
 
 abstract class _Character implements Character {
@@ -267,6 +284,9 @@ abstract class _Character implements Character {
       List<Item> items,
       List<Perk> perks,
       List<condition_types> conditions}) = _$_Character;
+
+  factory _Character.fromJson(Map<String, dynamic> json) =
+      _$_Character.fromJson;
 
   @override
   String get name;

@@ -1,11 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:gloomhaven_character_manager/models/constants.dart';
 import 'package:gloomhaven_character_manager/models/perk.model.dart';
-
-import 'item.model.dart';
-import 'modifier.model.dart';
+import 'package:gloomhaven_character_manager/models/item.model.dart';
 
 part 'character.model.freezed.dart';
+part 'character.model.g.dart';
 
 @freezed
 class Character with _$Character {
@@ -18,4 +17,7 @@ class Character with _$Character {
     @Default([]) List<Perk> perks,
     @Default([]) List<condition_types> conditions,
   }) = _Character;
+
+  factory Character.fromJson(Map<String, dynamic> json) =>
+      _$CharacterFromJson(json);
 }

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:gloomhaven_character_manager/models/constants.dart';
+import 'package:gloomhaven_character_manager/models/perk.model.dart';
 
 part 'modifier.model.freezed.dart';
 part 'modifier.model.g.dart';
@@ -9,14 +10,15 @@ part 'modifier.model.g.dart';
 @freezed
 class Modifier with _$Modifier {
   factory Modifier({
-    required modifier_value value,
-    @Default([]) List<element_types> elements,
+    required ModifierValue value,
+    @Default([]) List<ElementTypes> elements,
     @Default(false) bool shuffle,
     @Default(false) bool rolling,
-    @Default(condition_types.none) condition_types condition,
-    @Default(effect_types.none) effect_types effect,
+    @Default(ConditionTypes.none) ConditionTypes condition,
+    @Default(EffectTypes.none) EffectTypes effect,
     @Default(1) int effectTargets,
-    @Default(bonus_types.none) bonus_types bonus,
+    @Default(0) int effectDamage,
+    @Default(BonusTypes.none) BonusTypes bonus,
     @Default(1) int bonusSize,
   }) = _Modifier;
 
@@ -26,26 +28,26 @@ class Modifier with _$Modifier {
 
 List<Modifier> generateBaseModifierDeck() {
   var deck = <Modifier>[
-    Modifier(value: modifier_value.none, shuffle: true),
-    Modifier(value: modifier_value.minusTwo),
-    Modifier(value: modifier_value.minusOne),
-    Modifier(value: modifier_value.minusOne),
-    Modifier(value: modifier_value.minusOne),
-    Modifier(value: modifier_value.minusOne),
-    Modifier(value: modifier_value.minusOne),
-    Modifier(value: modifier_value.zero),
-    Modifier(value: modifier_value.zero),
-    Modifier(value: modifier_value.zero),
-    Modifier(value: modifier_value.zero),
-    Modifier(value: modifier_value.zero),
-    Modifier(value: modifier_value.zero),
-    Modifier(value: modifier_value.plusOne),
-    Modifier(value: modifier_value.plusOne),
-    Modifier(value: modifier_value.plusOne),
-    Modifier(value: modifier_value.plusOne),
-    Modifier(value: modifier_value.plusOne),
-    Modifier(value: modifier_value.plusTwo),
-    Modifier(value: modifier_value.doubled, shuffle: true),
+    Modifier(value: ModifierValue.none, shuffle: true),
+    Modifier(value: ModifierValue.minusTwo),
+    Modifier(value: ModifierValue.minusOne),
+    Modifier(value: ModifierValue.minusOne),
+    Modifier(value: ModifierValue.minusOne),
+    Modifier(value: ModifierValue.minusOne),
+    Modifier(value: ModifierValue.minusOne),
+    Modifier(value: ModifierValue.zero),
+    Modifier(value: ModifierValue.zero),
+    Modifier(value: ModifierValue.zero),
+    Modifier(value: ModifierValue.zero),
+    Modifier(value: ModifierValue.zero),
+    Modifier(value: ModifierValue.zero),
+    Modifier(value: ModifierValue.plusOne),
+    Modifier(value: ModifierValue.plusOne),
+    Modifier(value: ModifierValue.plusOne),
+    Modifier(value: ModifierValue.plusOne),
+    Modifier(value: ModifierValue.plusOne),
+    Modifier(value: ModifierValue.plusTwo),
+    Modifier(value: ModifierValue.doubled, shuffle: true),
   ];
   deck.shuffle(Random(DateTime.now().millisecondsSinceEpoch));
   return deck;
@@ -65,5 +67,24 @@ extension EditModifiersList on List<Modifier> {
   List<Modifier> addModifiers(Iterable<Modifier> toBeAdded) {
     addAll(toBeAdded);
     return this;
+  }
+
+  List<Modifier> applyPerks(Iterable<Perk> perks) {
+    List<Modifier> updatedList = this;
+    for (final perk in perks) {
+      if (perk.action == PerkAction.updateModifiers) {
+        updatedList = updatedList.addModifiers(
+          perk.modifierUpdates
+              .where((element) => element.change > 0)
+              .map((element) => element.modifier),
+        );
+        updatedList = updatedList.removeModifiers(
+          perk.modifierUpdates
+              .where((element) => element.change < 0)
+              .map((element) => element.modifier),
+        );
+      }
+    }
+    return updatedList;
   }
 }

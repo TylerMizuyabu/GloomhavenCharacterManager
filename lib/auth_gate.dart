@@ -22,7 +22,8 @@ class AuthGate extends StatelessWidget {
             ],
           );
         }
-        return const CharacterList();
+        String id = snapshot.data!.uid;
+        return CharacterList(userId: id);
       },
     );
   }

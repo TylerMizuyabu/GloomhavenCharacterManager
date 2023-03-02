@@ -23,14 +23,15 @@ class _$ModifierTearOff {
   const _$ModifierTearOff();
 
   _Modifier call(
-      {required modifier_value value,
-      List<element_types> elements = const [],
+      {required ModifierValue value,
+      List<ElementTypes> elements = const [],
       bool shuffle = false,
       bool rolling = false,
-      condition_types condition = condition_types.none,
-      effect_types effect = effect_types.none,
+      ConditionTypes condition = ConditionTypes.none,
+      EffectTypes effect = EffectTypes.none,
       int effectTargets = 1,
-      bonus_types bonus = bonus_types.none,
+      int effectDamage = 0,
+      BonusTypes bonus = BonusTypes.none,
       int bonusSize = 1}) {
     return _Modifier(
       value: value,
@@ -40,6 +41,7 @@ class _$ModifierTearOff {
       condition: condition,
       effect: effect,
       effectTargets: effectTargets,
+      effectDamage: effectDamage,
       bonus: bonus,
       bonusSize: bonusSize,
     );
@@ -55,14 +57,15 @@ const $Modifier = _$ModifierTearOff();
 
 /// @nodoc
 mixin _$Modifier {
-  modifier_value get value => throw _privateConstructorUsedError;
-  List<element_types> get elements => throw _privateConstructorUsedError;
+  ModifierValue get value => throw _privateConstructorUsedError;
+  List<ElementTypes> get elements => throw _privateConstructorUsedError;
   bool get shuffle => throw _privateConstructorUsedError;
   bool get rolling => throw _privateConstructorUsedError;
-  condition_types get condition => throw _privateConstructorUsedError;
-  effect_types get effect => throw _privateConstructorUsedError;
+  ConditionTypes get condition => throw _privateConstructorUsedError;
+  EffectTypes get effect => throw _privateConstructorUsedError;
   int get effectTargets => throw _privateConstructorUsedError;
-  bonus_types get bonus => throw _privateConstructorUsedError;
+  int get effectDamage => throw _privateConstructorUsedError;
+  BonusTypes get bonus => throw _privateConstructorUsedError;
   int get bonusSize => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -76,14 +79,15 @@ abstract class $ModifierCopyWith<$Res> {
   factory $ModifierCopyWith(Modifier value, $Res Function(Modifier) then) =
       _$ModifierCopyWithImpl<$Res>;
   $Res call(
-      {modifier_value value,
-      List<element_types> elements,
+      {ModifierValue value,
+      List<ElementTypes> elements,
       bool shuffle,
       bool rolling,
-      condition_types condition,
-      effect_types effect,
+      ConditionTypes condition,
+      EffectTypes effect,
       int effectTargets,
-      bonus_types bonus,
+      int effectDamage,
+      BonusTypes bonus,
       int bonusSize});
 }
 
@@ -104,6 +108,7 @@ class _$ModifierCopyWithImpl<$Res> implements $ModifierCopyWith<$Res> {
     Object? condition = freezed,
     Object? effect = freezed,
     Object? effectTargets = freezed,
+    Object? effectDamage = freezed,
     Object? bonus = freezed,
     Object? bonusSize = freezed,
   }) {
@@ -111,11 +116,11 @@ class _$ModifierCopyWithImpl<$Res> implements $ModifierCopyWith<$Res> {
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as modifier_value,
+              as ModifierValue,
       elements: elements == freezed
           ? _value.elements
           : elements // ignore: cast_nullable_to_non_nullable
-              as List<element_types>,
+              as List<ElementTypes>,
       shuffle: shuffle == freezed
           ? _value.shuffle
           : shuffle // ignore: cast_nullable_to_non_nullable
@@ -127,19 +132,23 @@ class _$ModifierCopyWithImpl<$Res> implements $ModifierCopyWith<$Res> {
       condition: condition == freezed
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
-              as condition_types,
+              as ConditionTypes,
       effect: effect == freezed
           ? _value.effect
           : effect // ignore: cast_nullable_to_non_nullable
-              as effect_types,
+              as EffectTypes,
       effectTargets: effectTargets == freezed
           ? _value.effectTargets
           : effectTargets // ignore: cast_nullable_to_non_nullable
               as int,
+      effectDamage: effectDamage == freezed
+          ? _value.effectDamage
+          : effectDamage // ignore: cast_nullable_to_non_nullable
+              as int,
       bonus: bonus == freezed
           ? _value.bonus
           : bonus // ignore: cast_nullable_to_non_nullable
-              as bonus_types,
+              as BonusTypes,
       bonusSize: bonusSize == freezed
           ? _value.bonusSize
           : bonusSize // ignore: cast_nullable_to_non_nullable
@@ -154,14 +163,15 @@ abstract class _$ModifierCopyWith<$Res> implements $ModifierCopyWith<$Res> {
       __$ModifierCopyWithImpl<$Res>;
   @override
   $Res call(
-      {modifier_value value,
-      List<element_types> elements,
+      {ModifierValue value,
+      List<ElementTypes> elements,
       bool shuffle,
       bool rolling,
-      condition_types condition,
-      effect_types effect,
+      ConditionTypes condition,
+      EffectTypes effect,
       int effectTargets,
-      bonus_types bonus,
+      int effectDamage,
+      BonusTypes bonus,
       int bonusSize});
 }
 
@@ -183,6 +193,7 @@ class __$ModifierCopyWithImpl<$Res> extends _$ModifierCopyWithImpl<$Res>
     Object? condition = freezed,
     Object? effect = freezed,
     Object? effectTargets = freezed,
+    Object? effectDamage = freezed,
     Object? bonus = freezed,
     Object? bonusSize = freezed,
   }) {
@@ -190,11 +201,11 @@ class __$ModifierCopyWithImpl<$Res> extends _$ModifierCopyWithImpl<$Res>
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as modifier_value,
+              as ModifierValue,
       elements: elements == freezed
           ? _value.elements
           : elements // ignore: cast_nullable_to_non_nullable
-              as List<element_types>,
+              as List<ElementTypes>,
       shuffle: shuffle == freezed
           ? _value.shuffle
           : shuffle // ignore: cast_nullable_to_non_nullable
@@ -206,19 +217,23 @@ class __$ModifierCopyWithImpl<$Res> extends _$ModifierCopyWithImpl<$Res>
       condition: condition == freezed
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
-              as condition_types,
+              as ConditionTypes,
       effect: effect == freezed
           ? _value.effect
           : effect // ignore: cast_nullable_to_non_nullable
-              as effect_types,
+              as EffectTypes,
       effectTargets: effectTargets == freezed
           ? _value.effectTargets
           : effectTargets // ignore: cast_nullable_to_non_nullable
               as int,
+      effectDamage: effectDamage == freezed
+          ? _value.effectDamage
+          : effectDamage // ignore: cast_nullable_to_non_nullable
+              as int,
       bonus: bonus == freezed
           ? _value.bonus
           : bonus // ignore: cast_nullable_to_non_nullable
-              as bonus_types,
+              as BonusTypes,
       bonusSize: bonusSize == freezed
           ? _value.bonusSize
           : bonusSize // ignore: cast_nullable_to_non_nullable
@@ -235,20 +250,21 @@ class _$_Modifier implements _Modifier {
       this.elements = const [],
       this.shuffle = false,
       this.rolling = false,
-      this.condition = condition_types.none,
-      this.effect = effect_types.none,
+      this.condition = ConditionTypes.none,
+      this.effect = EffectTypes.none,
       this.effectTargets = 1,
-      this.bonus = bonus_types.none,
+      this.effectDamage = 0,
+      this.bonus = BonusTypes.none,
       this.bonusSize = 1});
 
   factory _$_Modifier.fromJson(Map<String, dynamic> json) =>
       _$$_ModifierFromJson(json);
 
   @override
-  final modifier_value value;
+  final ModifierValue value;
   @JsonKey()
   @override
-  final List<element_types> elements;
+  final List<ElementTypes> elements;
   @JsonKey()
   @override
   final bool shuffle;
@@ -257,23 +273,26 @@ class _$_Modifier implements _Modifier {
   final bool rolling;
   @JsonKey()
   @override
-  final condition_types condition;
+  final ConditionTypes condition;
   @JsonKey()
   @override
-  final effect_types effect;
+  final EffectTypes effect;
   @JsonKey()
   @override
   final int effectTargets;
   @JsonKey()
   @override
-  final bonus_types bonus;
+  final int effectDamage;
+  @JsonKey()
+  @override
+  final BonusTypes bonus;
   @JsonKey()
   @override
   final int bonusSize;
 
   @override
   String toString() {
-    return 'Modifier(value: $value, elements: $elements, shuffle: $shuffle, rolling: $rolling, condition: $condition, effect: $effect, effectTargets: $effectTargets, bonus: $bonus, bonusSize: $bonusSize)';
+    return 'Modifier(value: $value, elements: $elements, shuffle: $shuffle, rolling: $rolling, condition: $condition, effect: $effect, effectTargets: $effectTargets, effectDamage: $effectDamage, bonus: $bonus, bonusSize: $bonusSize)';
   }
 
   @override
@@ -289,6 +308,8 @@ class _$_Modifier implements _Modifier {
             const DeepCollectionEquality().equals(other.effect, effect) &&
             const DeepCollectionEquality()
                 .equals(other.effectTargets, effectTargets) &&
+            const DeepCollectionEquality()
+                .equals(other.effectDamage, effectDamage) &&
             const DeepCollectionEquality().equals(other.bonus, bonus) &&
             const DeepCollectionEquality().equals(other.bonusSize, bonusSize));
   }
@@ -303,6 +324,7 @@ class _$_Modifier implements _Modifier {
       const DeepCollectionEquality().hash(condition),
       const DeepCollectionEquality().hash(effect),
       const DeepCollectionEquality().hash(effectTargets),
+      const DeepCollectionEquality().hash(effectDamage),
       const DeepCollectionEquality().hash(bonus),
       const DeepCollectionEquality().hash(bonusSize));
 
@@ -319,34 +341,37 @@ class _$_Modifier implements _Modifier {
 
 abstract class _Modifier implements Modifier {
   factory _Modifier(
-      {required modifier_value value,
-      List<element_types> elements,
+      {required ModifierValue value,
+      List<ElementTypes> elements,
       bool shuffle,
       bool rolling,
-      condition_types condition,
-      effect_types effect,
+      ConditionTypes condition,
+      EffectTypes effect,
       int effectTargets,
-      bonus_types bonus,
+      int effectDamage,
+      BonusTypes bonus,
       int bonusSize}) = _$_Modifier;
 
   factory _Modifier.fromJson(Map<String, dynamic> json) = _$_Modifier.fromJson;
 
   @override
-  modifier_value get value;
+  ModifierValue get value;
   @override
-  List<element_types> get elements;
+  List<ElementTypes> get elements;
   @override
   bool get shuffle;
   @override
   bool get rolling;
   @override
-  condition_types get condition;
+  ConditionTypes get condition;
   @override
-  effect_types get effect;
+  EffectTypes get effect;
   @override
   int get effectTargets;
   @override
-  bonus_types get bonus;
+  int get effectDamage;
+  @override
+  BonusTypes get bonus;
   @override
   int get bonusSize;
   @override

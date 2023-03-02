@@ -20,7 +20,7 @@ _$_Character _$$_CharacterFromJson(Map<String, dynamic> json) => _$_Character(
               .toList() ??
           const [],
       conditions: (json['conditions'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$condition_typesEnumMap, e))
+              ?.map((e) => $enumDecode(_$ConditionTypesEnumMap, e))
               .toList() ??
           const [],
     );
@@ -34,23 +34,23 @@ Map<String, dynamic> _$$_CharacterToJson(_$_Character instance) =>
       'items': instance.items,
       'perks': instance.perks,
       'conditions':
-          instance.conditions.map((e) => _$condition_typesEnumMap[e]).toList(),
+          instance.conditions.map((e) => _$ConditionTypesEnumMap[e]!).toList(),
     };
 
-const _$condition_typesEnumMap = {
-  condition_types.none: 'none',
-  condition_types.bane: 'bane',
-  condition_types.bless: 'bless',
-  condition_types.brittle: 'brittle',
-  condition_types.disarm: 'disarm',
-  condition_types.curse: 'curse',
-  condition_types.immobilize: 'immobilize',
-  condition_types.injure: 'injure',
-  condition_types.invisible: 'invisible',
-  condition_types.muddle: 'muddle',
-  condition_types.poison: 'poison',
-  condition_types.regenerate: 'regenerate',
-  condition_types.strengthen: 'strengthen',
-  condition_types.stun: 'stun',
-  condition_types.wound: 'wound',
+const _$ConditionTypesEnumMap = {
+  ConditionTypes.none: 'none',
+  ConditionTypes.bane: 'bane',
+  ConditionTypes.bless: 'bless',
+  ConditionTypes.brittle: 'brittle',
+  ConditionTypes.disarm: 'disarm',
+  ConditionTypes.curse: 'curse',
+  ConditionTypes.immobilize: 'immobilize',
+  ConditionTypes.injure: 'injure',
+  ConditionTypes.invisible: 'invisible',
+  ConditionTypes.muddle: 'muddle',
+  ConditionTypes.poison: 'poison',
+  ConditionTypes.regenerate: 'regenerate',
+  ConditionTypes.strengthen: 'strengthen',
+  ConditionTypes.stun: 'stun',
+  ConditionTypes.wound: 'wound',
 };

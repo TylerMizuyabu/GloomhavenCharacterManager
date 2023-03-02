@@ -3,11 +3,15 @@ import 'package:gloomhaven_character_manager/models/constants.dart';
 import 'package:gloomhaven_character_manager/models/perk.model.dart';
 import 'package:gloomhaven_character_manager/models/item.model.dart';
 
+import 'modifier.model.dart';
+
 part 'character.model.freezed.dart';
 part 'character.model.g.dart';
 
 @freezed
 class Character with _$Character {
+  const Character._();
+
   factory Character({
     required String name,
     required int health,
@@ -15,9 +19,13 @@ class Character with _$Character {
     @Default(0) int? gold,
     @Default([]) List<Item> items,
     @Default([]) List<Perk> perks,
-    @Default([]) List<condition_types> conditions,
+    @Default([]) List<ConditionTypes> conditions,
   }) = _Character;
 
   factory Character.fromJson(Map<String, dynamic> json) =>
       _$CharacterFromJson(json);
+
+  List<Modifier> get modifierDeck {
+    return generateBaseModifierDeck().applyPerks(perks);
+  }
 }

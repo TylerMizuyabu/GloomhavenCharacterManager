@@ -1,23 +1,23 @@
 import 'package:gloomhaven_character_manager/models/constants.dart';
 
-extension ModifierString on modifier_value {
+extension ModifierString on ModifierValue {
   String getString() {
     switch (this) {
-      case modifier_value.minusOne:
+      case ModifierValue.minusOne:
         return "(-1)";
-      case modifier_value.minusTwo:
+      case ModifierValue.minusTwo:
         return "(-2)";
-      case modifier_value.zero:
+      case ModifierValue.zero:
         return "(+0)";
-      case modifier_value.plusOne:
+      case ModifierValue.plusOne:
         return "(+1)";
-      case modifier_value.plusTwo:
+      case ModifierValue.plusTwo:
         return "(+2)";
-      case modifier_value.plusThree:
+      case ModifierValue.plusThree:
         return "(+3)";
-      case modifier_value.doubled:
+      case ModifierValue.doubled:
         return "(x2)";
-      case modifier_value.none:
+      case ModifierValue.none:
         return "MISS";
       default:
         return "";
@@ -25,37 +25,54 @@ extension ModifierString on modifier_value {
   }
 }
 
-extension ConditionString on condition_types {
+extension ConditionString on ConditionTypes {
   String getString() {
     switch (this) {
-      case condition_types.bane:
+      case ConditionTypes.bane:
         return "BANE";
-      case condition_types.bless:
+      case ConditionTypes.bless:
         return "BLESS";
-      case condition_types.brittle:
+      case ConditionTypes.brittle:
         return "BRITTLE";
-      case condition_types.disarm:
+      case ConditionTypes.disarm:
         return "DISARM";
-      case condition_types.curse:
+      case ConditionTypes.curse:
         return "CURSE";
-      case condition_types.immobilize:
+      case ConditionTypes.immobilize:
         return "IMMOBILIZE";
-      case condition_types.injure:
+      case ConditionTypes.injure:
         return "INJURE";
-      case condition_types.invisible:
+      case ConditionTypes.invisible:
         return "INVISIBLE";
-      case condition_types.muddle:
+      case ConditionTypes.muddle:
         return "MUDDLE";
-      case condition_types.poison:
+      case ConditionTypes.poison:
         return "POISON";
-      case condition_types.regenerate:
+      case ConditionTypes.regenerate:
         return "REGENERATE";
-      case condition_types.strengthen:
+      case ConditionTypes.strengthen:
         return "STRENGTHEN";
-      case condition_types.stun:
+      case ConditionTypes.stun:
         return "STUN";
-      case condition_types.wound:
+      case ConditionTypes.wound:
         return "WOUND";
+      default:
+        return "";
+    }
+  }
+}
+
+extension CharacterClassString on CharacterClass {
+  String getString() {
+    switch (this) {
+      case CharacterClass.humanVoidwarden:
+        return "Human Voidwarden";
+      case CharacterClass.inoxHatchet:
+        return "Inox Hatchet";
+      case CharacterClass.quatrylDemolitionist:
+        return "Quatryl Demolitionist";
+      case CharacterClass.valrathRedGuard:
+        return "Valrath Red Guard";
       default:
         return "";
     }

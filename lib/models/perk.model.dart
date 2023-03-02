@@ -8,11 +8,10 @@ part 'perk.model.g.dart';
 @freezed
 class Perk with _$Perk {
   factory Perk({
-    required perk_action action,
+    required PerkAction action,
     required List<ModifierUpdate> modifierUpdates,
     @Default(1) int maxUses,
     @Default(0) int used,
-    @Default('') String sideEffect,
   }) = _Perk;
 
   factory Perk.fromJson(Map<String, dynamic> json) => _$PerkFromJson(json);

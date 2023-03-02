@@ -1,8 +1,8 @@
-enum perk_action { none, add, remove, replace }
+enum PerkAction { none, updateModifiers }
 
-enum element_types { none, fire, ice, air, earth, light, dark }
+enum ElementTypes { none, fire, ice, air, earth, light, dark }
 
-enum modifier_value {
+enum ModifierValue {
   none,
   doubled,
   plusTwo,
@@ -13,19 +13,20 @@ enum modifier_value {
   minusTwo
 }
 
-enum characater_classes {
+enum CharacterClass {
   quatrylDemolitionist,
   inoxHatchet,
   humanVoidwarden,
   valrathRedGuard,
 }
 
-// heal isn't technically an effect according to gloomhaven. If making it an effect in order to avoid adding more fields to the Modifier class starts becomming an issue then we change this.
-enum effect_types { none, push, pull, addTarget, teleport, swap }
+// heal isn't technically an effect according to gloomhaven. If making it an effect in order to avoid adding more fields to the Modifier class starts becoming an issue then we change this.
+// damage adjacent also ins't technically an effect but I also don't want to make another field for that.
+enum EffectTypes { none, push, pull, addTarget, teleport, swap, damageAdjacent }
 
-enum bonus_types { none, heal, shield, retaliate }
+enum BonusTypes { none, heal, shield, retaliate }
 
-enum condition_types {
+enum ConditionTypes {
   none,
   bane,
   bless,

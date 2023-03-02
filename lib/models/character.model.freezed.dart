@@ -29,7 +29,7 @@ class _$CharacterTearOff {
       int? gold = 0,
       List<Item> items = const [],
       List<Perk> perks = const [],
-      List<condition_types> conditions = const []}) {
+      List<ConditionTypes> conditions = const []}) {
     return _Character(
       name: name,
       health: health,
@@ -57,7 +57,7 @@ mixin _$Character {
   int? get gold => throw _privateConstructorUsedError;
   List<Item> get items => throw _privateConstructorUsedError;
   List<Perk> get perks => throw _privateConstructorUsedError;
-  List<condition_types> get conditions => throw _privateConstructorUsedError;
+  List<ConditionTypes> get conditions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -76,7 +76,7 @@ abstract class $CharacterCopyWith<$Res> {
       int? gold,
       List<Item> items,
       List<Perk> perks,
-      List<condition_types> conditions});
+      List<ConditionTypes> conditions});
 }
 
 /// @nodoc
@@ -125,7 +125,7 @@ class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
       conditions: conditions == freezed
           ? _value.conditions
           : conditions // ignore: cast_nullable_to_non_nullable
-              as List<condition_types>,
+              as List<ConditionTypes>,
     ));
   }
 }
@@ -143,7 +143,7 @@ abstract class _$CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
       int? gold,
       List<Item> items,
       List<Perk> perks,
-      List<condition_types> conditions});
+      List<ConditionTypes> conditions});
 }
 
 /// @nodoc
@@ -193,14 +193,14 @@ class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
       conditions: conditions == freezed
           ? _value.conditions
           : conditions // ignore: cast_nullable_to_non_nullable
-              as List<condition_types>,
+              as List<ConditionTypes>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_Character implements _Character {
+class _$_Character extends _Character {
   _$_Character(
       {required this.name,
       required this.health,
@@ -208,7 +208,8 @@ class _$_Character implements _Character {
       this.gold = 0,
       this.items = const [],
       this.perks = const [],
-      this.conditions = const []});
+      this.conditions = const []})
+      : super._();
 
   factory _$_Character.fromJson(Map<String, dynamic> json) =>
       _$$_CharacterFromJson(json);
@@ -231,7 +232,7 @@ class _$_Character implements _Character {
   final List<Perk> perks;
   @JsonKey()
   @override
-  final List<condition_types> conditions;
+  final List<ConditionTypes> conditions;
 
   @override
   String toString() {
@@ -275,7 +276,7 @@ class _$_Character implements _Character {
   }
 }
 
-abstract class _Character implements Character {
+abstract class _Character extends Character {
   factory _Character(
       {required String name,
       required int health,
@@ -283,7 +284,8 @@ abstract class _Character implements Character {
       int? gold,
       List<Item> items,
       List<Perk> perks,
-      List<condition_types> conditions}) = _$_Character;
+      List<ConditionTypes> conditions}) = _$_Character;
+  _Character._() : super._();
 
   factory _Character.fromJson(Map<String, dynamic> json) =
       _$_Character.fromJson;
@@ -301,7 +303,7 @@ abstract class _Character implements Character {
   @override
   List<Perk> get perks;
   @override
-  List<condition_types> get conditions;
+  List<ConditionTypes> get conditions;
   @override
   @JsonKey(ignore: true)
   _$CharacterCopyWith<_Character> get copyWith =>

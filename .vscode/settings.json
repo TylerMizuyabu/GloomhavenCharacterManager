@@ -6,5 +6,11 @@
     "Quatryl",
     "Valrath",
     "Voidwarden"
-  ]
+  ],
+  "dart.lineLength": 150,
+  "[dart]": {
+      "editor.rulers": [
+          150
+      ],
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/firestore.dart';
+import 'package:gloomhaven_character_manager/character_creator.dart';
 
 final userCollectionRef = FirebaseFirestore.instance.collection('users');
 
@@ -25,16 +26,15 @@ class CharacterList extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CharacterCreator()));
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 
   Query<Map<String, dynamic>> generateFirestoreQuery() {
-    return userCollectionRef
-        .doc(userId)
-        .collection('characters')
-        .orderBy('name');
+    return userCollectionRef.doc(userId).collection('characters').orderBy('name');
   }
 }

@@ -189,8 +189,8 @@ class _$_Item implements _Item {
       required this.id,
       required this.description,
       required this.equipSlot,
-      this.cost = 1,
-      this.useType = ItemUseType.infinite,
+      required this.cost,
+      required this.useType,
       this.uses = 1,
       final List<Modifier> additionalModifiers = const []})
       : _additionalModifiers = additionalModifiers;
@@ -206,10 +206,8 @@ class _$_Item implements _Item {
   @override
   final ItemEquipSlot equipSlot;
   @override
-  @JsonKey()
   final int cost;
   @override
-  @JsonKey()
   final ItemUseType useType;
   @override
   @JsonKey()
@@ -280,8 +278,8 @@ abstract class _Item implements Item {
       required final int id,
       required final String description,
       required final ItemEquipSlot equipSlot,
-      final int cost,
-      final ItemUseType useType,
+      required final int cost,
+      required final ItemUseType useType,
       final int uses,
       final List<Modifier> additionalModifiers}) = _$_Item;
 

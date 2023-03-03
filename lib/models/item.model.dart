@@ -13,8 +13,8 @@ class Item with _$Item {
       required int id,
       required String description,
       required ItemEquipSlot equipSlot,
-      @Default(1) int cost,
-      @Default(ItemUseType.infinite) ItemUseType useType,
+      required int cost,
+      required ItemUseType useType,
       @Default(1) int uses,
       @Default([]) List<Modifier> additionalModifiers}) = _Item;
 

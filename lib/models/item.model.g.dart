@@ -11,9 +11,8 @@ _$_Item _$$_ItemFromJson(Map<String, dynamic> json) => _$_Item(
       id: json['id'] as int,
       description: json['description'] as String,
       equipSlot: $enumDecode(_$ItemEquipSlotEnumMap, json['equipSlot']),
-      cost: json['cost'] as int? ?? 1,
-      useType: $enumDecodeNullable(_$ItemUseTypeEnumMap, json['useType']) ??
-          ItemUseType.infinite,
+      cost: json['cost'] as int,
+      useType: $enumDecode(_$ItemUseTypeEnumMap, json['useType']),
       uses: json['uses'] as int? ?? 1,
       additionalModifiers: (json['additionalModifiers'] as List<dynamic>?)
               ?.map((e) => Modifier.fromJson(e as Map<String, dynamic>))

@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Eagle-Eye Goggles",
+    "description": "During your attack, gain Advantage for the entire Attack action.",
+    "equipSlot": 0,
+    "useType": 1,
+    "cost": 30
+  },
+  {
+    "name": "Iron Helmet",
+    "id": 2,
+    "description": "When attacked, consider any 2x attack modifier card the enemy draws to be a +0 instead.",
+    "equipSlot": 0,
+    "useType": 0,
+    "cost": 20
+  },
+  {
+    "name": "Studded Leather",
+    "id": 4,
+    "description": "When attacked, before drawing an attack modifier card, the attacker gains Disadvantage for the attack, and you gain Shield 1 for the attack.",
+    "equipSlot": 1,
+    "useType": 1,
+    "cost": 25
+  },
+  {
+    "name": "Weathered boots",
+    "id": 5,
+    "description": "During your movement, add +1 Move to a single movement.",
+    "equipSlot": 2,
+    "useType": 1,
+    "cost": 15
+  },
+  {
+    "name": "Winged Shoes",
+    "id": 6,
+    "description": "During your movement, add Jump to the entire Move action.",
+    "equipSlot": 2,
+    "useType": 1,
+    "cost": 15
+  },
+  {
+    "name": "Heater Shield",
+    "id": 7,
+    "description": "When damaged by an attack, gain Shield 1 for the attack.",
+    "equipSlot": 3,
+    "useType": 1,
+    "cost": 20
+  },
+  {
+    "name": "Throwing Hammer",
+    "id": 8,
+    "description": "During your ranged attack, add STUN to a single attack.",
+    "equipSlot": 3,
+    "useType": 2,
+    "cost": 30
+  },
+  {
+    "name": "Poison Dagger",
+    "id": 9,
+    "description": "During your melee attack, add POISON to a single attack.",
+    "equipSlot": 3,
+    "useType": 1,
+    "cost": 20
+  },
+  {
+    "name": "Iron Spear",
+    "id": 10,
+    "description": "During your single-target melee Attack ability, attack any one enemy within 2 hexes.",
+    "equipSlot": 3,
+    "useType": 1,
+    "cost": 20
+  },
+  {
+    "name": "Healing Potion",
+    "id": 11,
+    "description": "During your turn, perform a \"Heal 3, Self\" action.",
+    "equipSlot": 5,
+    "useType": 2,
+    "cost": 10
+  },
+  {
+    "name": "Stamina Potion",
+    "id": 12,
+    "description": "During your turn, return one of your discarded cards to your hand.",
+    "equipSlot": 5,
+    "useType": 2,
+    "cost": 10
+  },
+  {
+    "name": "Power Potion",
+    "id": 13,
+    "description": "During your attack, add +1 Attack to the entire Attack action.",
+    "equipSlot": 5,
+    "useType": 2,
+    "cost": 10
+  }
+]

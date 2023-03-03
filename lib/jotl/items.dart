@@ -1,30 +1,22 @@
-import 'package:gloomhaven_character_manager/models/constants.dart';
-
-import '../models/item.model.dart';
-
 //Pics used to grab items from https://imgur.com/gallery/3H4KiFU
 //Confirm with hubert to make sure these are in order
 
-final List<Item> items = [
-  Item(
-    name: 'Eagle-Eye Goggles',
-    id: 1,
-    description: 'During your attack, gain Advantage for the entire Attack action',
-    equipSlot: ItemEquipSlot.head,
-    useType: ItemUseType.spend,
-  ),
-  Item(
-    name: 'Iron Helmet',
-    id: 2,
-    description: 'When attacked, consider any 2x attack modifier card the enemy draws to be a +0 instead',
-    equipSlot: ItemEquipSlot.head,
-    useType: ItemUseType.infinite,
-  ),
-  Item(
-    name: 'Chain Armor',
-    id: 3,
-    description: 'During your turn, gain Shield 1 for the rest of the round',
-    equipSlot: ItemEquipSlot.body,
-    useType: ItemUseType.spend,
-  )
-];
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:gloomhaven_character_manager/config/config.service.dart';
+import 'package:gloomhaven_character_manager/models/item.model.dart';
+import 'package:injectable/injectable.dart';
+
+@Injectable()
+class JOTLItemLoader {
+  late final String itemFileLocation;
+  JOTLItemLoader(ConfigService service) {
+    itemFileLocation = service.config.jotlItemListFileLocation;
+  }
+
+  Future<List<Item>> get items async {
+    Iterable itemJsons = jsonDecode(await File(itemFileLocation).readAsString());
+    return itemJsons.map((json) => Item.fromJson(json)).toList();
+  }
+}

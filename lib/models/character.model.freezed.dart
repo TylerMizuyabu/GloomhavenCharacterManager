@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'character.model.dart';
 
@@ -12,42 +12,11 @@ part of 'character.model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Character _$CharacterFromJson(Map<String, dynamic> json) {
   return _Character.fromJson(json);
 }
-
-/// @nodoc
-class _$CharacterTearOff {
-  const _$CharacterTearOff();
-
-  _Character call(
-      {required String name,
-      required int health,
-      int? exp = 0,
-      int? gold = 0,
-      List<Item> items = const [],
-      List<Perk> perks = const [],
-      List<ConditionTypes> conditions = const []}) {
-    return _Character(
-      name: name,
-      health: health,
-      exp: exp,
-      gold: gold,
-      items: items,
-      perks: perks,
-      conditions: conditions,
-    );
-  }
-
-  Character fromJson(Map<String, Object?> json) {
-    return Character.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Character = _$CharacterTearOff();
 
 /// @nodoc
 mixin _$Character {
@@ -68,7 +37,8 @@ mixin _$Character {
 /// @nodoc
 abstract class $CharacterCopyWith<$Res> {
   factory $CharacterCopyWith(Character value, $Res Function(Character) then) =
-      _$CharacterCopyWithImpl<$Res>;
+      _$CharacterCopyWithImpl<$Res, Character>;
+  @useResult
   $Res call(
       {String name,
       int health,
@@ -80,62 +50,66 @@ abstract class $CharacterCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
+class _$CharacterCopyWithImpl<$Res, $Val extends Character>
+    implements $CharacterCopyWith<$Res> {
   _$CharacterCopyWithImpl(this._value, this._then);
 
-  final Character _value;
   // ignore: unused_field
-  final $Res Function(Character) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? health = freezed,
+    Object? name = null,
+    Object? health = null,
     Object? exp = freezed,
     Object? gold = freezed,
-    Object? items = freezed,
-    Object? perks = freezed,
-    Object? conditions = freezed,
+    Object? items = null,
+    Object? perks = null,
+    Object? conditions = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      health: health == freezed
+      health: null == health
           ? _value.health
           : health // ignore: cast_nullable_to_non_nullable
               as int,
-      exp: exp == freezed
+      exp: freezed == exp
           ? _value.exp
           : exp // ignore: cast_nullable_to_non_nullable
               as int?,
-      gold: gold == freezed
+      gold: freezed == gold
           ? _value.gold
           : gold // ignore: cast_nullable_to_non_nullable
               as int?,
-      items: items == freezed
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<Item>,
-      perks: perks == freezed
+      perks: null == perks
           ? _value.perks
           : perks // ignore: cast_nullable_to_non_nullable
               as List<Perk>,
-      conditions: conditions == freezed
+      conditions: null == conditions
           ? _value.conditions
           : conditions // ignore: cast_nullable_to_non_nullable
               as List<ConditionTypes>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
-  factory _$CharacterCopyWith(
-          _Character value, $Res Function(_Character) then) =
-      __$CharacterCopyWithImpl<$Res>;
+abstract class _$$_CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
+  factory _$$_CharacterCopyWith(
+          _$_Character value, $Res Function(_$_Character) then) =
+      __$$_CharacterCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String name,
       int health,
@@ -147,51 +121,51 @@ abstract class _$CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
-    implements _$CharacterCopyWith<$Res> {
-  __$CharacterCopyWithImpl(_Character _value, $Res Function(_Character) _then)
-      : super(_value, (v) => _then(v as _Character));
+class __$$_CharacterCopyWithImpl<$Res>
+    extends _$CharacterCopyWithImpl<$Res, _$_Character>
+    implements _$$_CharacterCopyWith<$Res> {
+  __$$_CharacterCopyWithImpl(
+      _$_Character _value, $Res Function(_$_Character) _then)
+      : super(_value, _then);
 
-  @override
-  _Character get _value => super._value as _Character;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? health = freezed,
+    Object? name = null,
+    Object? health = null,
     Object? exp = freezed,
     Object? gold = freezed,
-    Object? items = freezed,
-    Object? perks = freezed,
-    Object? conditions = freezed,
+    Object? items = null,
+    Object? perks = null,
+    Object? conditions = null,
   }) {
-    return _then(_Character(
-      name: name == freezed
+    return _then(_$_Character(
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      health: health == freezed
+      health: null == health
           ? _value.health
           : health // ignore: cast_nullable_to_non_nullable
               as int,
-      exp: exp == freezed
+      exp: freezed == exp
           ? _value.exp
           : exp // ignore: cast_nullable_to_non_nullable
               as int?,
-      gold: gold == freezed
+      gold: freezed == gold
           ? _value.gold
           : gold // ignore: cast_nullable_to_non_nullable
               as int?,
-      items: items == freezed
-          ? _value.items
+      items: null == items
+          ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<Item>,
-      perks: perks == freezed
-          ? _value.perks
+      perks: null == perks
+          ? _value._perks
           : perks // ignore: cast_nullable_to_non_nullable
               as List<Perk>,
-      conditions: conditions == freezed
-          ? _value.conditions
+      conditions: null == conditions
+          ? _value._conditions
           : conditions // ignore: cast_nullable_to_non_nullable
               as List<ConditionTypes>,
     ));
@@ -206,10 +180,13 @@ class _$_Character extends _Character {
       required this.health,
       this.exp = 0,
       this.gold = 0,
-      this.items = const [],
-      this.perks = const [],
-      this.conditions = const []})
-      : super._();
+      final List<Item> items = const [],
+      final List<Perk> perks = const [],
+      final List<ConditionTypes> conditions = const []})
+      : _items = items,
+        _perks = perks,
+        _conditions = conditions,
+        super._();
 
   factory _$_Character.fromJson(Map<String, dynamic> json) =>
       _$$_CharacterFromJson(json);
@@ -218,21 +195,38 @@ class _$_Character extends _Character {
   final String name;
   @override
   final int health;
-  @JsonKey()
   @override
+  @JsonKey()
   final int? exp;
-  @JsonKey()
   @override
+  @JsonKey()
   final int? gold;
-  @JsonKey()
+  final List<Item> _items;
   @override
-  final List<Item> items;
   @JsonKey()
+  List<Item> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  final List<Perk> _perks;
   @override
-  final List<Perk> perks;
   @JsonKey()
+  List<Perk> get perks {
+    if (_perks is EqualUnmodifiableListView) return _perks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_perks);
+  }
+
+  final List<ConditionTypes> _conditions;
   @override
-  final List<ConditionTypes> conditions;
+  @JsonKey()
+  List<ConditionTypes> get conditions {
+    if (_conditions is EqualUnmodifiableListView) return _conditions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_conditions);
+  }
 
   @override
   String toString() {
@@ -243,48 +237,52 @@ class _$_Character extends _Character {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Character &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.health, health) &&
-            const DeepCollectionEquality().equals(other.exp, exp) &&
-            const DeepCollectionEquality().equals(other.gold, gold) &&
-            const DeepCollectionEquality().equals(other.items, items) &&
-            const DeepCollectionEquality().equals(other.perks, perks) &&
+            other is _$_Character &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.health, health) || other.health == health) &&
+            (identical(other.exp, exp) || other.exp == exp) &&
+            (identical(other.gold, gold) || other.gold == gold) &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality().equals(other._perks, _perks) &&
             const DeepCollectionEquality()
-                .equals(other.conditions, conditions));
+                .equals(other._conditions, _conditions));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(health),
-      const DeepCollectionEquality().hash(exp),
-      const DeepCollectionEquality().hash(gold),
-      const DeepCollectionEquality().hash(items),
-      const DeepCollectionEquality().hash(perks),
-      const DeepCollectionEquality().hash(conditions));
 
   @JsonKey(ignore: true)
   @override
-  _$CharacterCopyWith<_Character> get copyWith =>
-      __$CharacterCopyWithImpl<_Character>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      health,
+      exp,
+      gold,
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_perks),
+      const DeepCollectionEquality().hash(_conditions));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CharacterCopyWith<_$_Character> get copyWith =>
+      __$$_CharacterCopyWithImpl<_$_Character>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CharacterToJson(this);
+    return _$$_CharacterToJson(
+      this,
+    );
   }
 }
 
 abstract class _Character extends Character {
   factory _Character(
-      {required String name,
-      required int health,
-      int? exp,
-      int? gold,
-      List<Item> items,
-      List<Perk> perks,
-      List<ConditionTypes> conditions}) = _$_Character;
+      {required final String name,
+      required final int health,
+      final int? exp,
+      final int? gold,
+      final List<Item> items,
+      final List<Perk> perks,
+      final List<ConditionTypes> conditions}) = _$_Character;
   _Character._() : super._();
 
   factory _Character.fromJson(Map<String, dynamic> json) =
@@ -306,6 +304,6 @@ abstract class _Character extends Character {
   List<ConditionTypes> get conditions;
   @override
   @JsonKey(ignore: true)
-  _$CharacterCopyWith<_Character> get copyWith =>
+  _$$_CharacterCopyWith<_$_Character> get copyWith =>
       throw _privateConstructorUsedError;
 }

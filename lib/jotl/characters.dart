@@ -1,8 +1,8 @@
-import 'modifier_update.model.dart';
-import 'perk.model.dart';
-import 'constants.dart';
-import 'character.model.dart';
-import 'modifier.model.dart';
+import '../models/modifier_update.model.dart';
+import '../models/perk.model.dart';
+import '../models/constants.dart';
+import '../models/character.model.dart';
+import '../models/modifier.model.dart';
 
 Character generateQuatrylDemolitionist(String name, {int health = 10}) {
   return Character(name: name, health: health, perks: [

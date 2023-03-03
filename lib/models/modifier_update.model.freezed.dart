@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'modifier_update.model.dart';
 
@@ -12,30 +12,11 @@ part of 'modifier_update.model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ModifierUpdate _$ModifierUpdateFromJson(Map<String, dynamic> json) {
   return _ModifierUpdate.fromJson(json);
 }
-
-/// @nodoc
-class _$ModifierUpdateTearOff {
-  const _$ModifierUpdateTearOff();
-
-  _ModifierUpdate call({required Modifier modifier, required int change}) {
-    return _ModifierUpdate(
-      modifier: modifier,
-      change: change,
-    );
-  }
-
-  ModifierUpdate fromJson(Map<String, Object?> json) {
-    return ModifierUpdate.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ModifierUpdate = _$ModifierUpdateTearOff();
 
 /// @nodoc
 mixin _$ModifierUpdate {
@@ -52,53 +33,58 @@ mixin _$ModifierUpdate {
 abstract class $ModifierUpdateCopyWith<$Res> {
   factory $ModifierUpdateCopyWith(
           ModifierUpdate value, $Res Function(ModifierUpdate) then) =
-      _$ModifierUpdateCopyWithImpl<$Res>;
+      _$ModifierUpdateCopyWithImpl<$Res, ModifierUpdate>;
+  @useResult
   $Res call({Modifier modifier, int change});
 
   $ModifierCopyWith<$Res> get modifier;
 }
 
 /// @nodoc
-class _$ModifierUpdateCopyWithImpl<$Res>
+class _$ModifierUpdateCopyWithImpl<$Res, $Val extends ModifierUpdate>
     implements $ModifierUpdateCopyWith<$Res> {
   _$ModifierUpdateCopyWithImpl(this._value, this._then);
 
-  final ModifierUpdate _value;
   // ignore: unused_field
-  final $Res Function(ModifierUpdate) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? modifier = freezed,
-    Object? change = freezed,
+    Object? modifier = null,
+    Object? change = null,
   }) {
     return _then(_value.copyWith(
-      modifier: modifier == freezed
+      modifier: null == modifier
           ? _value.modifier
           : modifier // ignore: cast_nullable_to_non_nullable
               as Modifier,
-      change: change == freezed
+      change: null == change
           ? _value.change
           : change // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ModifierCopyWith<$Res> get modifier {
     return $ModifierCopyWith<$Res>(_value.modifier, (value) {
-      return _then(_value.copyWith(modifier: value));
+      return _then(_value.copyWith(modifier: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$ModifierUpdateCopyWith<$Res>
+abstract class _$$_ModifierUpdateCopyWith<$Res>
     implements $ModifierUpdateCopyWith<$Res> {
-  factory _$ModifierUpdateCopyWith(
-          _ModifierUpdate value, $Res Function(_ModifierUpdate) then) =
-      __$ModifierUpdateCopyWithImpl<$Res>;
+  factory _$$_ModifierUpdateCopyWith(
+          _$_ModifierUpdate value, $Res Function(_$_ModifierUpdate) then) =
+      __$$_ModifierUpdateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Modifier modifier, int change});
 
   @override
@@ -106,27 +92,25 @@ abstract class _$ModifierUpdateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ModifierUpdateCopyWithImpl<$Res>
-    extends _$ModifierUpdateCopyWithImpl<$Res>
-    implements _$ModifierUpdateCopyWith<$Res> {
-  __$ModifierUpdateCopyWithImpl(
-      _ModifierUpdate _value, $Res Function(_ModifierUpdate) _then)
-      : super(_value, (v) => _then(v as _ModifierUpdate));
+class __$$_ModifierUpdateCopyWithImpl<$Res>
+    extends _$ModifierUpdateCopyWithImpl<$Res, _$_ModifierUpdate>
+    implements _$$_ModifierUpdateCopyWith<$Res> {
+  __$$_ModifierUpdateCopyWithImpl(
+      _$_ModifierUpdate _value, $Res Function(_$_ModifierUpdate) _then)
+      : super(_value, _then);
 
-  @override
-  _ModifierUpdate get _value => super._value as _ModifierUpdate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? modifier = freezed,
-    Object? change = freezed,
+    Object? modifier = null,
+    Object? change = null,
   }) {
-    return _then(_ModifierUpdate(
-      modifier: modifier == freezed
+    return _then(_$_ModifierUpdate(
+      modifier: null == modifier
           ? _value.modifier
           : modifier // ignore: cast_nullable_to_non_nullable
               as Modifier,
-      change: change == freezed
+      change: null == change
           ? _value.change
           : change // ignore: cast_nullable_to_non_nullable
               as int,
@@ -156,31 +140,34 @@ class _$_ModifierUpdate implements _ModifierUpdate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ModifierUpdate &&
-            const DeepCollectionEquality().equals(other.modifier, modifier) &&
-            const DeepCollectionEquality().equals(other.change, change));
+            other is _$_ModifierUpdate &&
+            (identical(other.modifier, modifier) ||
+                other.modifier == modifier) &&
+            (identical(other.change, change) || other.change == change));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(modifier),
-      const DeepCollectionEquality().hash(change));
 
   @JsonKey(ignore: true)
   @override
-  _$ModifierUpdateCopyWith<_ModifierUpdate> get copyWith =>
-      __$ModifierUpdateCopyWithImpl<_ModifierUpdate>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, modifier, change);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ModifierUpdateCopyWith<_$_ModifierUpdate> get copyWith =>
+      __$$_ModifierUpdateCopyWithImpl<_$_ModifierUpdate>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ModifierUpdateToJson(this);
+    return _$$_ModifierUpdateToJson(
+      this,
+    );
   }
 }
 
 abstract class _ModifierUpdate implements ModifierUpdate {
-  factory _ModifierUpdate({required Modifier modifier, required int change}) =
-      _$_ModifierUpdate;
+  factory _ModifierUpdate(
+      {required final Modifier modifier,
+      required final int change}) = _$_ModifierUpdate;
 
   factory _ModifierUpdate.fromJson(Map<String, dynamic> json) =
       _$_ModifierUpdate.fromJson;
@@ -191,6 +178,6 @@ abstract class _ModifierUpdate implements ModifierUpdate {
   int get change;
   @override
   @JsonKey(ignore: true)
-  _$ModifierUpdateCopyWith<_ModifierUpdate> get copyWith =>
+  _$$_ModifierUpdateCopyWith<_$_ModifierUpdate> get copyWith =>
       throw _privateConstructorUsedError;
 }

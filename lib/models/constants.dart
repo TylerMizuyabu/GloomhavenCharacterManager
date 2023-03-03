@@ -2,16 +2,7 @@ enum PerkAction { none, updateModifiers }
 
 enum ElementTypes { none, fire, ice, air, earth, light, dark }
 
-enum ModifierValue {
-  none,
-  doubled,
-  plusTwo,
-  plusOne,
-  plusThree,
-  zero,
-  minusOne,
-  minusTwo
-}
+enum ModifierValue { none, doubled, plusTwo, plusOne, plusThree, zero, minusOne, minusTwo }
 
 enum CharacterClass {
   quatrylDemolitionist,
@@ -26,20 +17,8 @@ enum EffectTypes { none, push, pull, addTarget, teleport, swap, damageAdjacent }
 
 enum BonusTypes { none, heal, shield, retaliate }
 
-enum ConditionTypes {
-  none,
-  bane,
-  bless,
-  brittle,
-  disarm,
-  curse,
-  immobilize,
-  injure,
-  invisible,
-  muddle,
-  poison,
-  regenerate,
-  strengthen,
-  stun,
-  wound
-}
+enum ConditionTypes { none, bane, bless, brittle, disarm, curse, immobilize, injure, invisible, muddle, poison, regenerate, strengthen, stun, wound }
+
+enum ItemUseType { infinite, spend, consume }
+
+enum ItemEquipSlot { head, body, legs, oneHand, twoHand, smallItem }

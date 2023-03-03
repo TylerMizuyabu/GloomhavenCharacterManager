@@ -2,6 +2,9 @@ import 'package:gloomhaven_character_manager/models/constants.dart';
 
 import '../models/item.model.dart';
 
+//Pics used to grab items from https://imgur.com/gallery/3H4KiFU
+//Confirm with hubert to make sure these are in order
+
 final List<Item> items = [
   Item(
     name: 'Eagle-Eye Goggles',

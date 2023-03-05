@@ -7,9 +7,11 @@ part of 'config.model.dart';
 // **************************************************************************
 
 _$_Config _$$_ConfigFromJson(Map<String, dynamic> json) => _$_Config(
-      jotlItemListFileLocation: json['jotlItemListFileLocation'] as String,
+      itemsFileLocation: json['itemsFileLocation'] as String,
+      perksFileLocation: json['perksFileLocation'] as String,
     );
 
 Map<String, dynamic> _$$_ConfigToJson(_$_Config instance) => <String, dynamic>{
-      'jotlItemListFileLocation': instance.jotlItemListFileLocation,
+      'itemsFileLocation': instance.itemsFileLocation,
+      'perksFileLocation': instance.perksFileLocation,
     };

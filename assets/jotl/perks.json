@@ -1,0 +1,521 @@
+{
+  "quatrylDemolitionist": [
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -4
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "minusOne" },
+          "change": -2
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "minusTwo" },
+          "change": -1
+        },
+        {
+          "modifier": { "value": "plusOne" },
+          "change": -1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusTwo",
+            "condition": "muddle"
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        { "modifier": { "value": "minusOne" }, "change": -1 },
+        {
+          "modifier": {
+            "value": "zero",
+            "condition": "poison"
+          },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusTwo" },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusOne" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusTwo",
+            "elements": ["earth"]
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusOne" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusTwo",
+            "elements": ["fire"]
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": {
+            "value": "zero",
+            "effect": "damageAdjacent",
+            "effectDamage": 1
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    }
+  ],
+  "inoxHatchet": [
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "minusOne" },
+          "change": -2
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusTwo",
+            "condition": "muddle"
+          },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusOne",
+            "condition": "poison"
+          },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusOne",
+            "condition": "wound"
+          },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusOne",
+            "condition": "immobilize"
+          },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusOne",
+            "effect": "push",
+            "effectTargets": 2
+          },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "zero",
+            "condition": "stun"
+          },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusOne" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusOne",
+            "condition": "stun"
+          },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusTwo", "elements": ["air"] },
+          "change": 1
+        }
+      ],
+      "maxUses": 3
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusOne" },
+          "change": -1
+        },
+        { "modifier": { "value": "plusThree" }, "change": 1 }
+      ],
+      "maxUses": 3
+    }
+  ],
+  "humanVoidwarden": [
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "minusOne" },
+          "change": -2
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "minusTwo" },
+          "change": -1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": { "value": "plusOne", "elements": ["dark"] },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": { "value": "plusOne", "elements": ["ice"] },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "minusOne" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "zero",
+            "bonus": "heal",
+            "bonusSize": 1
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": {
+            "value": "plusOne",
+            "bonus": "heal",
+            "bonusSize": 1
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 3
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusOne", "condition": "poison" },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusThree" },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusOne", "condition": "curse" },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    }
+  ],
+  "valrathRedGuard": [
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -4
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "minusOne" },
+          "change": -2
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "minusTwo" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusOne"
+          },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "minusOne" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusOne"
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusOne" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusTwo",
+            "elements": ["fire"]
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "plusOne" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusTwo",
+            "elements": ["ice"]
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": {
+            "value": "plusOne",
+            "elements": ["fire", "ice"]
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": {
+            "value": "plusOne",
+            "bonus": "shield"
+          },
+          "change": 1
+        }
+      ],
+      "maxUses": 2
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusOne",
+            "condition": "immobilize"
+          },
+          "change": 1
+        }
+      ]
+    },
+    {
+      "action": "updateModifiers",
+      "modifierUpdates": [
+        {
+          "modifier": { "value": "zero" },
+          "change": -1
+        },
+        {
+          "modifier": {
+            "value": "plusOne",
+            "condition": "wound"
+          },
+          "change": 1
+        }
+      ]
+    }
+  ]
+}

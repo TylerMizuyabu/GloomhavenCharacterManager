@@ -1,24 +1,19 @@
 import 'dart:convert';
-import 'dart:io';
 
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:gloomhaven_character_manager/config/config.model.dart';
 
-abstract class ConfigService {
-  Config get config;
-}
-
-class FileSystemConfigService implements ConfigService {
+class ConfigService {
   late Config _config;
 
-  FileSystemConfigService._create(String jsonString) {
+  ConfigService._create(String jsonString) {
     _config = Config.fromJson(jsonDecode(jsonString));
   }
 
-  static Future<FileSystemConfigService> create() async {
-    final configFile = File('config.json');
-    return FileSystemConfigService._create(await configFile.readAsString());
+  static Future<ConfigService> create(String file) async {
+    final config = await rootBundle.loadString(file);
+    return ConfigService._create(config);
   }
 
-  @override
   Config get config => _config;
 }

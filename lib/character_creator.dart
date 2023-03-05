@@ -3,8 +3,13 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:gloomhaven_character_manager/injection.dart';
+import 'package:gloomhaven_character_manager/asset_loader.dart';
 import 'package:gloomhaven_character_manager/models/constants.dart';
 import 'package:gloomhaven_character_manager/models/constants.extension.dart';
+import 'package:gloomhaven_character_manager/models/item.model.dart';
+
+import 'models/perk.model.dart';
 
 final _characterCreationFormKey1 = GlobalKey<FormBuilderState>();
 final _characterCreationFormKey2 = GlobalKey<FormBuilderState>();
@@ -19,9 +24,11 @@ class CharacterCreator extends StatefulWidget {
 
 class _CharacterCreatorState extends State<CharacterCreator> {
   final int _maxStepIndex = 2;
+  final AssetLoader assetLoader = getIt<AssetLoader>();
+
   int _index = 0;
   bool _isItemSubmitDisabled = true;
-  List<int> itemList = [];
+  List<Item> itemList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +64,12 @@ class _CharacterCreatorState extends State<CharacterCreator> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       ElevatedButton(
-                        onPressed: details.stepIndex == _maxStepIndex ? _createCharacter : details.onStepContinue,
-                        child: Text(details.stepIndex == _maxStepIndex ? 'Create' : 'Next'),
-                      ),
+                          onPressed: details.stepIndex == _maxStepIndex ? _createCharacter : details.onStepContinue,
+                          style: const ButtonStyle(splashFactory: InkSparkle.constantTurbulenceSeedSplashFactory),
+                          child: Text(details.stepIndex == _maxStepIndex ? 'Create' : 'Next')),
                       ElevatedButton(
                         onPressed: details.stepIndex == 0 ? () => Navigator.of(context).pop() : details.onStepCancel,
+                        style: const ButtonStyle(splashFactory: InkSparkle.constantTurbulenceSeedSplashFactory),
                         child: Text(details.stepIndex == 0 ? 'Cancel' : 'Back'),
                       ),
                     ],
@@ -128,29 +136,27 @@ class _CharacterCreatorState extends State<CharacterCreator> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            FormBuilderTextField(
-                              name: 'itemId',
-                              decoration: InputDecoration(
-                                  label: const Text('Item Id'), constraints: BoxConstraints.tightFor(width: constraints.maxWidth / 3)),
-                              keyboardType: TextInputType.number,
-                              validator: FormBuilderValidators.compose(
-                                [
-                                  FormBuilderValidators.required(),
-                                  FormBuilderValidators.integer(),
-                                  FormBuilderValidators.min(1),
-                                  FormBuilderValidators.max(36)
-                                ],
-                              ),
-                              valueTransformer: (value) {
-                                if (value == null) {
-                                  return value;
-                                }
-                                return int.tryParse(value);
-                              },
-                              onChanged: (value) {
-                                _isItemSubmitDisabled = value == null && int.tryParse(value ?? '0') != null && int.parse(value ?? '0') > 0;
-                              },
-                            ),
+                            FutureBuilder(
+                                future: assetLoader.items,
+                                builder: (BuildContext context, AsyncSnapshot<List<Item>> snapshot) {
+                                  return FormBuilderDropdown<Item?>(
+                                    name: 'item',
+                                    initialValue: null,
+                                    decoration: InputDecoration(
+                                        label: const Text('Item'), constraints: BoxConstraints.tightFor(width: constraints.maxWidth / 3)),
+                                    items: snapshot.hasData
+                                        ? snapshot.data!
+                                            .map((item) =>
+                                                DropdownMenuItem(alignment: AlignmentDirectional.center, value: item, child: Text(item.name)))
+                                            .toList()
+                                        : [],
+                                    validator: FormBuilderValidators.required(),
+                                    onChanged: (Item? value) {
+                                      // Not sure if this is safe. TODO double check
+                                      _isItemSubmitDisabled = value == null || !_characterCreationFormKey2.currentState!.isValid;
+                                    },
+                                  );
+                                }),
                             FormBuilderTextField(
                               name: 'itemQuantity',
                               initialValue: '1',
@@ -180,15 +186,16 @@ class _CharacterCreatorState extends State<CharacterCreator> {
                                       }
                                       FormBuilderState state = _characterCreationFormKey2.currentState!;
                                       if (state.isValid) {
-                                        var itemId = state.fields['itemId']?.transformedValue;
+                                        //These aren't type safe. TODO look into how to do that.
+                                        var item = state.fields['item']?.value;
                                         var quantity = state.fields['itemQuantity']?.transformedValue;
 
-                                        if (itemId == null || quantity == null) {
+                                        if (item == null || quantity == null) {
                                           return;
                                         }
 
                                         for (var i = 0; i < quantity; i++) {
-                                          itemList.add(itemId);
+                                          itemList.add(item);
                                         }
                                       }
                                     },
@@ -205,7 +212,7 @@ class _CharacterCreatorState extends State<CharacterCreator> {
                           children: itemList
                               .map((e) => Padding(
                                     padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
-                                    child: Text('Item $e'),
+                                    child: Text('Item $e.name'),
                                   ))
                               .toList(),
                         ),
@@ -213,7 +220,15 @@ class _CharacterCreatorState extends State<CharacterCreator> {
                     ],
                   ),
                 ),
-                const Step(title: Text('Perks'), content: Text('TODO Make the perk selection form'))
+                Step(
+                  title: const Text('Perks'),
+                  content: FutureBuilder(
+                    future: assetLoader.perks,
+                    builder: (BuildContext context, AsyncSnapshot<Map<CharacterClass, List<Perk>>> snapshot) {
+                      return const Text('TODO build out this section');
+                    },
+                  ),
+                )
               ],
             ),
           );

@@ -20,7 +20,8 @@ Config _$ConfigFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Config {
-  String get jotlItemListFileLocation => throw _privateConstructorUsedError;
+  String get itemsFileLocation => throw _privateConstructorUsedError;
+  String get perksFileLocation => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -32,7 +33,7 @@ abstract class $ConfigCopyWith<$Res> {
   factory $ConfigCopyWith(Config value, $Res Function(Config) then) =
       _$ConfigCopyWithImpl<$Res, Config>;
   @useResult
-  $Res call({String jotlItemListFileLocation});
+  $Res call({String itemsFileLocation, String perksFileLocation});
 }
 
 /// @nodoc
@@ -48,12 +49,17 @@ class _$ConfigCopyWithImpl<$Res, $Val extends Config>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? jotlItemListFileLocation = null,
+    Object? itemsFileLocation = null,
+    Object? perksFileLocation = null,
   }) {
     return _then(_value.copyWith(
-      jotlItemListFileLocation: null == jotlItemListFileLocation
-          ? _value.jotlItemListFileLocation
-          : jotlItemListFileLocation // ignore: cast_nullable_to_non_nullable
+      itemsFileLocation: null == itemsFileLocation
+          ? _value.itemsFileLocation
+          : itemsFileLocation // ignore: cast_nullable_to_non_nullable
+              as String,
+      perksFileLocation: null == perksFileLocation
+          ? _value.perksFileLocation
+          : perksFileLocation // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -65,7 +71,7 @@ abstract class _$$_ConfigCopyWith<$Res> implements $ConfigCopyWith<$Res> {
       __$$_ConfigCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String jotlItemListFileLocation});
+  $Res call({String itemsFileLocation, String perksFileLocation});
 }
 
 /// @nodoc
@@ -78,12 +84,17 @@ class __$$_ConfigCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? jotlItemListFileLocation = null,
+    Object? itemsFileLocation = null,
+    Object? perksFileLocation = null,
   }) {
     return _then(_$_Config(
-      jotlItemListFileLocation: null == jotlItemListFileLocation
-          ? _value.jotlItemListFileLocation
-          : jotlItemListFileLocation // ignore: cast_nullable_to_non_nullable
+      itemsFileLocation: null == itemsFileLocation
+          ? _value.itemsFileLocation
+          : itemsFileLocation // ignore: cast_nullable_to_non_nullable
+              as String,
+      perksFileLocation: null == perksFileLocation
+          ? _value.perksFileLocation
+          : perksFileLocation // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -92,17 +103,19 @@ class __$$_ConfigCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Config implements _Config {
-  _$_Config({required this.jotlItemListFileLocation});
+  _$_Config({required this.itemsFileLocation, required this.perksFileLocation});
 
   factory _$_Config.fromJson(Map<String, dynamic> json) =>
       _$$_ConfigFromJson(json);
 
   @override
-  final String jotlItemListFileLocation;
+  final String itemsFileLocation;
+  @override
+  final String perksFileLocation;
 
   @override
   String toString() {
-    return 'Config(jotlItemListFileLocation: $jotlItemListFileLocation)';
+    return 'Config(itemsFileLocation: $itemsFileLocation, perksFileLocation: $perksFileLocation)';
   }
 
   @override
@@ -110,14 +123,16 @@ class _$_Config implements _Config {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Config &&
-            (identical(
-                    other.jotlItemListFileLocation, jotlItemListFileLocation) ||
-                other.jotlItemListFileLocation == jotlItemListFileLocation));
+            (identical(other.itemsFileLocation, itemsFileLocation) ||
+                other.itemsFileLocation == itemsFileLocation) &&
+            (identical(other.perksFileLocation, perksFileLocation) ||
+                other.perksFileLocation == perksFileLocation));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, jotlItemListFileLocation);
+  int get hashCode =>
+      Object.hash(runtimeType, itemsFileLocation, perksFileLocation);
 
   @JsonKey(ignore: true)
   @override
@@ -134,12 +149,16 @@ class _$_Config implements _Config {
 }
 
 abstract class _Config implements Config {
-  factory _Config({required final String jotlItemListFileLocation}) = _$_Config;
+  factory _Config(
+      {required final String itemsFileLocation,
+      required final String perksFileLocation}) = _$_Config;
 
   factory _Config.fromJson(Map<String, dynamic> json) = _$_Config.fromJson;
 
   @override
-  String get jotlItemListFileLocation;
+  String get itemsFileLocation;
+  @override
+  String get perksFileLocation;
   @override
   @JsonKey(ignore: true)
   _$$_ConfigCopyWith<_$_Config> get copyWith =>

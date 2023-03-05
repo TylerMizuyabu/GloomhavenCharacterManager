@@ -5,7 +5,7 @@ part 'config.model.g.dart';
 
 @freezed
 class Config with _$Config {
-  factory Config({required String jotlItemListFileLocation}) = _Config;
+  factory Config({required String itemsFileLocation, required String perksFileLocation}) = _Config;
 
   factory Config.fromJson(Map<String, dynamic> json) => _$ConfigFromJson(json);
 }

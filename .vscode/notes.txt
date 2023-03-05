@@ -1,7 +1,12 @@
-- Should try to use the item loader to load a list of items to pick from during character creation setup. Loading the items from file could be
-  a background task. Would have to make sure that the items added to a players list are a deep copy of the item from a list. We wouldn't want a 
-  player to consume a potion and have it consume all potions of the same type that they have equipped.
-- Also I think maybe the config module should be "FileSystemConfigModule" instead. It makes slightly more sense to me that a module consists
-  of services that implement interfaces that widgets might want. So if I want to build the app so it works with filesystem then I use the
-  FileSystemConfigModule. If I want my configurations to be taken from an S3 bucket then I would swap it out with an S3ConfigModule which would
-  have implementations for all abstract services related to configuration.
+- Figure out if there is a way I can put off the file loading so that it doesn't affect navigation. Navigation still seems kind of slow the first time.
+  - I might just have to do the initial asset load during the loading screen. Figure out how to do that
+- Create character creation service that should act like a builder. Should have methods like withName, withExp, ...
+- Modularize things. I can make better modules. By default I think I want one module that pulls things from build assets. e.x:
+  - Could have one module for loading from build assets where we have:
+    1. An implementation of config service that pulls a configuration file that specifies where in the buld assets things like items.json
+       and perks.json can be found
+    2. An implementation of assets loader that attempts to pull assets from the build assets
+  - Could have another module that loads from an s3 bucket where:
+    1. Config service pulls a different configuration file that has info on the s3 bucket, and where in the s3 bucket to find items.json
+       and perks.json
+    3. An implementation of asstes loader that attempts to pull assets from the s3 bucket.

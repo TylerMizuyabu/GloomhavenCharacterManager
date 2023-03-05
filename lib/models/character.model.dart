@@ -13,8 +13,9 @@ class Character with _$Character {
   const Character._();
 
   factory Character({
-    required String name,
-    required int health,
+    @Default('') String name,
+    @Default(0) int health,
+    @Default(CharacterClass.humanVoidwarden) CharacterClass characterClass,
     @Default(0) int? exp,
     @Default(0) int? gold,
     @Default([]) List<Item> items,
@@ -22,8 +23,7 @@ class Character with _$Character {
     @Default([]) List<ConditionTypes> conditions,
   }) = _Character;
 
-  factory Character.fromJson(Map<String, dynamic> json) =>
-      _$CharacterFromJson(json);
+  factory Character.fromJson(Map<String, dynamic> json) => _$CharacterFromJson(json);
 
   List<Modifier> get modifierDeck {
     return generateBaseModifierDeck().applyPerks(perks);

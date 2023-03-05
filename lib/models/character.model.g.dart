@@ -7,8 +7,11 @@ part of 'character.model.dart';
 // **************************************************************************
 
 _$_Character _$$_CharacterFromJson(Map<String, dynamic> json) => _$_Character(
-      name: json['name'] as String,
-      health: json['health'] as int,
+      name: json['name'] as String? ?? '',
+      health: json['health'] as int? ?? 0,
+      characterClass: $enumDecodeNullable(
+              _$CharacterClassEnumMap, json['characterClass']) ??
+          CharacterClass.humanVoidwarden,
       exp: json['exp'] as int? ?? 0,
       gold: json['gold'] as int? ?? 0,
       items: (json['items'] as List<dynamic>?)
@@ -29,6 +32,7 @@ Map<String, dynamic> _$$_CharacterToJson(_$_Character instance) =>
     <String, dynamic>{
       'name': instance.name,
       'health': instance.health,
+      'characterClass': _$CharacterClassEnumMap[instance.characterClass]!,
       'exp': instance.exp,
       'gold': instance.gold,
       'items': instance.items,
@@ -36,6 +40,13 @@ Map<String, dynamic> _$$_CharacterToJson(_$_Character instance) =>
       'conditions':
           instance.conditions.map((e) => _$ConditionTypesEnumMap[e]!).toList(),
     };
+
+const _$CharacterClassEnumMap = {
+  CharacterClass.quatrylDemolitionist: 'quatrylDemolitionist',
+  CharacterClass.inoxHatchet: 'inoxHatchet',
+  CharacterClass.humanVoidwarden: 'humanVoidwarden',
+  CharacterClass.valrathRedGuard: 'valrathRedGuard',
+};
 
 const _$ConditionTypesEnumMap = {
   ConditionTypes.none: 'none',

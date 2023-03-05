@@ -4,33 +4,37 @@
 import 'dart:convert';
 import 'dart:isolate';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:gloomhaven_character_manager/config/config.service.dart';
-import 'package:gloomhaven_character_manager/asset_loader.dart';
+import 'package:gloomhaven_character_manager/app/config/config.service.dart';
+import 'package:gloomhaven_character_manager/app/asset_loader.dart';
+import 'package:gloomhaven_character_manager/injection.dart';
 import 'package:gloomhaven_character_manager/models/constants.dart';
 import 'package:gloomhaven_character_manager/models/item.model.dart';
 import 'package:gloomhaven_character_manager/models/perk.model.dart';
-import 'package:injectable/injectable.dart';
 
-@Injectable()
-class BuildAssetLoader implements AssetLoader {
+class BuildAssetLoader extends ChangeNotifier implements AssetLoader {
   List<Item> _items = [];
   Map<CharacterClass, List<Perk>> _perks = {};
   late final String itemsFilePath;
   late final String perksFilePath;
 
-  BuildAssetLoader(ConfigService service) {
+  BuildAssetLoader._buildAssetLoader(ConfigService service) {
     itemsFilePath = service.config.itemsFileLocation;
     perksFilePath = service.config.perksFileLocation;
+  }
+
+  static Future<AssetLoader> create() async {
+    final configService = await getIt.getAsync<ConfigService>();
+    return BuildAssetLoader._buildAssetLoader(configService);
   }
 
   @override
   Future<List<Item>> get items async {
     if (_items.isEmpty) {
       final unparsed = await rootBundle.loadString(itemsFilePath);
-      final items = await Isolate.run(() => _parseItems(unparsed));
-      _items = items;
-      return items;
+      _items = await Isolate.run(() => _parseItems(unparsed));
+      notifyListeners();
     }
     return _items;
   }
@@ -45,6 +49,7 @@ class BuildAssetLoader implements AssetLoader {
     if (_perks.isEmpty) {
       String unparsed = await rootBundle.loadString(perksFilePath);
       _perks = await Isolate.run(() => _parsePerks(unparsed));
+      notifyListeners();
     }
     return _perks;
   }

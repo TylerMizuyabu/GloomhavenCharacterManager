@@ -22,6 +22,7 @@ Character _$CharacterFromJson(Map<String, dynamic> json) {
 mixin _$Character {
   String get name => throw _privateConstructorUsedError;
   int get health => throw _privateConstructorUsedError;
+  CharacterClass get characterClass => throw _privateConstructorUsedError;
   int? get exp => throw _privateConstructorUsedError;
   int? get gold => throw _privateConstructorUsedError;
   List<Item> get items => throw _privateConstructorUsedError;
@@ -42,6 +43,7 @@ abstract class $CharacterCopyWith<$Res> {
   $Res call(
       {String name,
       int health,
+      CharacterClass characterClass,
       int? exp,
       int? gold,
       List<Item> items,
@@ -64,6 +66,7 @@ class _$CharacterCopyWithImpl<$Res, $Val extends Character>
   $Res call({
     Object? name = null,
     Object? health = null,
+    Object? characterClass = null,
     Object? exp = freezed,
     Object? gold = freezed,
     Object? items = null,
@@ -79,6 +82,10 @@ class _$CharacterCopyWithImpl<$Res, $Val extends Character>
           ? _value.health
           : health // ignore: cast_nullable_to_non_nullable
               as int,
+      characterClass: null == characterClass
+          ? _value.characterClass
+          : characterClass // ignore: cast_nullable_to_non_nullable
+              as CharacterClass,
       exp: freezed == exp
           ? _value.exp
           : exp // ignore: cast_nullable_to_non_nullable
@@ -113,6 +120,7 @@ abstract class _$$_CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
   $Res call(
       {String name,
       int health,
+      CharacterClass characterClass,
       int? exp,
       int? gold,
       List<Item> items,
@@ -133,6 +141,7 @@ class __$$_CharacterCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
     Object? health = null,
+    Object? characterClass = null,
     Object? exp = freezed,
     Object? gold = freezed,
     Object? items = null,
@@ -148,6 +157,10 @@ class __$$_CharacterCopyWithImpl<$Res>
           ? _value.health
           : health // ignore: cast_nullable_to_non_nullable
               as int,
+      characterClass: null == characterClass
+          ? _value.characterClass
+          : characterClass // ignore: cast_nullable_to_non_nullable
+              as CharacterClass,
       exp: freezed == exp
           ? _value.exp
           : exp // ignore: cast_nullable_to_non_nullable
@@ -176,8 +189,9 @@ class __$$_CharacterCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Character extends _Character {
   _$_Character(
-      {required this.name,
-      required this.health,
+      {this.name = '',
+      this.health = 0,
+      this.characterClass = CharacterClass.humanVoidwarden,
       this.exp = 0,
       this.gold = 0,
       final List<Item> items = const [],
@@ -192,9 +206,14 @@ class _$_Character extends _Character {
       _$$_CharacterFromJson(json);
 
   @override
+  @JsonKey()
   final String name;
   @override
+  @JsonKey()
   final int health;
+  @override
+  @JsonKey()
+  final CharacterClass characterClass;
   @override
   @JsonKey()
   final int? exp;
@@ -230,7 +249,7 @@ class _$_Character extends _Character {
 
   @override
   String toString() {
-    return 'Character(name: $name, health: $health, exp: $exp, gold: $gold, items: $items, perks: $perks, conditions: $conditions)';
+    return 'Character(name: $name, health: $health, characterClass: $characterClass, exp: $exp, gold: $gold, items: $items, perks: $perks, conditions: $conditions)';
   }
 
   @override
@@ -240,6 +259,8 @@ class _$_Character extends _Character {
             other is _$_Character &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.health, health) || other.health == health) &&
+            (identical(other.characterClass, characterClass) ||
+                other.characterClass == characterClass) &&
             (identical(other.exp, exp) || other.exp == exp) &&
             (identical(other.gold, gold) || other.gold == gold) &&
             const DeepCollectionEquality().equals(other._items, _items) &&
@@ -254,6 +275,7 @@ class _$_Character extends _Character {
       runtimeType,
       name,
       health,
+      characterClass,
       exp,
       gold,
       const DeepCollectionEquality().hash(_items),
@@ -276,8 +298,9 @@ class _$_Character extends _Character {
 
 abstract class _Character extends Character {
   factory _Character(
-      {required final String name,
-      required final int health,
+      {final String name,
+      final int health,
+      final CharacterClass characterClass,
       final int? exp,
       final int? gold,
       final List<Item> items,
@@ -292,6 +315,8 @@ abstract class _Character extends Character {
   String get name;
   @override
   int get health;
+  @override
+  CharacterClass get characterClass;
   @override
   int? get exp;
   @override

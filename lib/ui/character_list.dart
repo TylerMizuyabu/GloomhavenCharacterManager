@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/firestore.dart';
-import 'package:gloomhaven_character_manager/character_creator.dart';
+import 'package:gloomhaven_character_manager/ui/character_creator.dart';
 
 final userCollectionRef = FirebaseFirestore.instance.collection('users');
 

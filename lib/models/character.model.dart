@@ -25,6 +25,9 @@ class Character with _$Character {
 
   factory Character.fromJson(Map<String, dynamic> json) => _$CharacterFromJson(json);
 
+  // @override
+  // Map<String, dynamic> toJson() => this.toJson();
+
   List<Modifier> get modifierDeck {
     return generateBaseModifierDeck().applyPerks(perks);
   }

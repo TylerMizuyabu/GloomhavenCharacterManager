@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:gloomhaven_character_manager/firebase_options.dart';
 
 import 'auth_gate.dart';
+import 'injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await setup();
   runApp(const MyApp());
 }
 

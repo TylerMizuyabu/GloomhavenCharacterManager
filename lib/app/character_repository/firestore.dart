@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:gloomhaven_character_manager/app/character_service/character_service.dart';
-import 'package:gloomhaven_character_manager/app/user_service/user_service.dart';
-import 'package:gloomhaven_character_manager/injection.dart';
-import 'package:gloomhaven_character_manager/models/character.model.dart';
+import 'package:gloomhaven_utility/app/character_repository/character_repository.dart';
+import 'package:gloomhaven_utility/app/user_service/user_service.dart';
+import 'package:gloomhaven_utility/injection.dart';
+import 'package:gloomhaven_utility/models/character.model.dart';
 import 'package:rxdart/streams.dart';
 
 class FirestoreCharacterService implements CharacterService {

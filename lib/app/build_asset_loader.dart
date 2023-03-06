@@ -6,12 +6,12 @@ import 'dart:isolate';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:gloomhaven_character_manager/app/config/config.service.dart';
-import 'package:gloomhaven_character_manager/app/asset_loader.dart';
-import 'package:gloomhaven_character_manager/injection.dart';
-import 'package:gloomhaven_character_manager/models/constants.dart';
-import 'package:gloomhaven_character_manager/models/item.model.dart';
-import 'package:gloomhaven_character_manager/models/perk.model.dart';
+import 'package:gloomhaven_utility/app/config/config.service.dart';
+import 'package:gloomhaven_utility/app/asset_loader.dart';
+import 'package:gloomhaven_utility/injection.dart';
+import 'package:gloomhaven_utility/models/constants.dart';
+import 'package:gloomhaven_utility/models/item.model.dart';
+import 'package:gloomhaven_utility/models/perk.model.dart';
 
 class BuildAssetLoader extends ChangeNotifier implements AssetLoader {
   List<Item> _items = [];

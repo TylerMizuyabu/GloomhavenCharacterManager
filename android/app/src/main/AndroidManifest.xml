@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.gloomhaven_character_manager">
+    package="com.example.gloomhaven_utility">
    <application
-        android:label="gloomhaven_character_manager"
+        android:label="gloomhaven_utility"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:gloomhaven_character_manager/app/user_service/user_service.dart';
+import 'package:gloomhaven_utility/app/user_service/user_service.dart';
 
 class FirebaseUserService implements UserService {
   @override

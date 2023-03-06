@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:gloomhaven_character_manager/app/config/config.model.dart';
+import 'package:gloomhaven_utility/app/config/config.model.dart';
 
 class ConfigService {
   late Config _config;

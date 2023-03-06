@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "973155968571",
+    "project_id": "gloomhaven-character-manager",
+    "storage_bucket": "gloomhaven-character-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973155968571:android:75df60b39971f960685e1e",
+        "android_client_info": {
+          "package_name": "com.example.gloomhaven_utility"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973155968571-s08vt9skmuetabmjn6pc344imcdic3mf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABTcQyzJQf0Sv68xAzxfF5hJ4zyHrlJio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973155968571-s08vt9skmuetabmjn6pc344imcdic3mf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "973155968571-u6vnp15gca1447htjqg1248sd6aq0l71.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.glmhvn-chr-mngr.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

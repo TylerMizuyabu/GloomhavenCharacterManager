@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:gloomhaven_character_manager/firebase_options.dart';
+import 'package:gloomhaven_utility/firebase_options.dart';
 
 import 'auth_gate.dart';
 import 'injection.dart';

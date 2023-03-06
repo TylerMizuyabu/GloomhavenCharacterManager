@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(gloomhaven_character_manager LANGUAGES CXX)
+project(gloomhaven_utility LANGUAGES CXX)
 
-set(BINARY_NAME "gloomhaven_character_manager")
+set(BINARY_NAME "gloomhaven_utility")
 
 cmake_policy(SET CMP0063 NEW)
 

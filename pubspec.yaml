@@ -1,5 +1,5 @@
-name: gloomhaven_character_manager
-description: A new Flutter project.
+name: gloomhaven_utility
+description: A utility app for gloomhaven to store characters and provide other helpful utilities during a scenario. Only has JOTL support for now.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

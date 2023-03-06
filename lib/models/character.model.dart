@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:gloomhaven_character_manager/models/constants.dart';
-import 'package:gloomhaven_character_manager/models/perk.model.dart';
-import 'package:gloomhaven_character_manager/models/item.model.dart';
+import 'package:gloomhaven_utility/models/constants.dart';
+import 'package:gloomhaven_utility/models/perk.model.dart';
+import 'package:gloomhaven_utility/models/item.model.dart';
 
 import 'modifier.model.dart';
 

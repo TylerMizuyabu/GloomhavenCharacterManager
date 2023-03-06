@@ -1,8 +1,8 @@
-import 'package:gloomhaven_character_manager/models/constants.dart';
+import 'package:gloomhaven_utility/models/constants.dart';
 
-import 'package:gloomhaven_character_manager/models/character.model.dart';
-import 'package:gloomhaven_character_manager/models/item.model.dart';
-import 'package:gloomhaven_character_manager/models/perk.model.dart';
+import 'package:gloomhaven_utility/models/character.model.dart';
+import 'package:gloomhaven_utility/models/item.model.dart';
+import 'package:gloomhaven_utility/models/perk.model.dart';
 
 class CharacterBuilder {
   Character _character = Character();

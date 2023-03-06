@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:gloomhaven_character_manager/models/constants.dart';
-import 'package:gloomhaven_character_manager/models/perk.model.dart';
+import 'package:gloomhaven_utility/models/constants.dart';
+import 'package:gloomhaven_utility/models/perk.model.dart';
 
 part 'modifier.model.freezed.dart';
 part 'modifier.model.g.dart';
@@ -22,8 +22,7 @@ class Modifier with _$Modifier {
     @Default(1) int bonusSize,
   }) = _Modifier;
 
-  factory Modifier.fromJson(Map<String, dynamic> json) =>
-      _$ModifierFromJson(json);
+  factory Modifier.fromJson(Map<String, dynamic> json) => _$ModifierFromJson(json);
 }
 
 List<Modifier> generateBaseModifierDeck() {
@@ -74,14 +73,10 @@ extension EditModifiersList on List<Modifier> {
     for (final perk in perks) {
       if (perk.action == PerkAction.updateModifiers) {
         updatedList = updatedList.addModifiers(
-          perk.modifierUpdates
-              .where((element) => element.change > 0)
-              .map((element) => element.modifier),
+          perk.modifierUpdates.where((element) => element.change > 0).map((element) => element.modifier),
         );
         updatedList = updatedList.removeModifiers(
-          perk.modifierUpdates
-              .where((element) => element.change < 0)
-              .map((element) => element.modifier),
+          perk.modifierUpdates.where((element) => element.change < 0).map((element) => element.modifier),
         );
       }
     }

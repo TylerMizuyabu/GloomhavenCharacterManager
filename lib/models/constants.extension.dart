@@ -1,4 +1,4 @@
-import 'package:gloomhaven_character_manager/models/constants.dart';
+import 'package:gloomhaven_utility/models/constants.dart';
 
 extension ModifierString on ModifierValue {
   String getString() {

@@ -1,4 +1,4 @@
 - Figure out if there is a way I can put off the file loading so that it doesn't affect navigation. Navigation still seems kind of slow the first time.
   - I might just have to do the initial asset load during the loading screen. Figure out how to do that
 - Should get icon for app and icons for +0 cards, conditions (muddle, ectr)
-- Should break up character_creator into separate widgets. It's getting large
+- Fix google social login

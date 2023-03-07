@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:gloomhaven_utility/app/asset_loader.dart';
 import 'package:gloomhaven_utility/app/character_builder.dart';
+import 'package:gloomhaven_utility/app/user_service/user_service.dart';
 import 'package:gloomhaven_utility/models/constants.dart';
 import 'package:gloomhaven_utility/models/item.model.dart';
 import 'package:gloomhaven_utility/models/perk.model.dart';
@@ -37,7 +38,18 @@ class _CharacterCreatorState extends State<CharacterCreator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Character Creation")),
+      appBar: AppBar(
+        title: const Text("Character Creation"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout_rounded),
+            onPressed: () {
+              final UserService userService = getIt.get<UserService>();
+              userService.logout(context);
+            },
+          )
+        ],
+      ),
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SizedBox(
